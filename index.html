@@ -27,38 +27,18 @@
 
                 <!-- Kevin working on this one -->
                 <div class="column is-one-fifth">
-                    <div class="dropdown is-active">
-                        <div class="dropdown-trigger">
-                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span>Choose Ingredients</span>
-                                <span class="icon is-small">
-                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    Salt
-                                </a>
-                                <a class="dropdown-item">
-                                    Pepper
-                                </a>
-                                <a href="#" class="dropdown-item is-active">
-                                    Kidney beans
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Lima beans
-                                </a>
-                                <hr class="dropdown-divider">
-                                <a href="#" class="dropdown-item">
-                                    Black beans
-                                </a>
-                            </div>
-                        </div>
+                    <div class="level fix-margin">
+                        <button id="recipe-btn" class="level-left button">Search Recipes</button>
+                        <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
+                        <button id="clear-btn" class="level-right button">Clear</button>
+                        <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
                     </div>
+                    <form autocomplete="off" action="/action_page.php">
+                        <div class="autocomplete" style="width:300px;">
+                            <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
+                        </div>
+                    </form>
                 </div>
-
 
                 <div class="column is-three-fifths">
                     <section class="hero">
@@ -80,6 +60,7 @@
             </div>
         </div>
     </main>
+    <script src="./script.js"></script>
 </body>
 
 </html>
