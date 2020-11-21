@@ -1,40 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <title>Served Project</title>
 </head>
+
 <body>
+
     <head>
-       <h1>Served</h1>
-       <nav>
-           <ul>
-               <li>Saved Recipes</li>
-               <li>About the developers</li>
-           </ul>
-       </nav> 
-    </head>    
-    
+        <h1>Served</h1>
+        <nav>
+            <ul>
+                <li>Saved Recipes</li>
+                <li>About the developers</li>
+            </ul>
+        </nav>
+    </head>
+
     <main>
         <div class="container">
             <div class="columns">
-                <div class="column is-one-fifth">
 
+                <!-- Kevin working on this one -->
+                <div class="column is-one-fifth">
+                    <div class="dropdown is-active">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                <span>Choose Ingredients</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">
+                                    Salt
+                                </a>
+                                <a class="dropdown-item">
+                                    Pepper
+                                </a>
+                                <a href="#" class="dropdown-item is-active">
+                                    Kidney beans
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    Lima beans
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="#" class="dropdown-item">
+                                    Black beans
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="column is-three-fifths">
                     <section class="hero">
                         <div class="hero-body">
-                          <div class="container">
-                            <h2 class="subtitle">
-                              Hero subtitle
-                            </h2>
-                          </div>
+                            <div class="container">
+                                <h2 class="subtitle">
+                                    Hero subtitle
+                                </h2>
+                            </div>
                         </div>
                     </section>
                     <div class="recipe-container">
-                        
+
                     </div>
                 </div>
                 <div class="column is-one-fifth">
@@ -44,4 +81,5 @@
         </div>
     </main>
 </body>
+
 </html>
