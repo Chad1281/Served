@@ -1,4 +1,4 @@
-var ingredients = ["beans", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots"]
+var ingredients = ["beans", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", ""]
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
