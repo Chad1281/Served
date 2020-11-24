@@ -53,3 +53,19 @@ input[type=submit] {
 div .level {
     margin-bottom: .5rem !important;
 }
+
+
+
+
+
+/* Hero background - Charli's work */
+.hero-body {
+    background-image: url("img/heroimg.jpg");
+    height: 800px;
+    background-size: cover;
+}
+
+.navbar-served {
+    color:cadetblue;
+    font-size: x-large;
+}
