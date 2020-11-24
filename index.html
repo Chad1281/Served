@@ -2,126 +2,135 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <title>Served Project</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>Served Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 
 <body>
 
-  <!-- Navbar code start -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item">
-        <h1 class="navbar-served has-text-weight-bold">Served</h1>
-      </a>
-
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
-          </a>
-
-          <div class="navbar-dropdown">
+    <!-- Navbar code start -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
             <a class="navbar-item">
-              About the Developers
+                <h1 class="navbar-served has-text-weight-bold">Served</h1>
             </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Your Saved Recipes</strong>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
-          </div>
         </div>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar code end -->
-  <!-- Hero code start -->
-  <section class="hero">
-    <div class="hero-body">
-      <div class="columns pt-6 pr-6">
-        <div class="column is-2 is-offset-10">
-          <h1 class="title is-1">
-            Served
-          </h1>
-          <h2 class="subtitle is-4">
-            Dinner is served.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Hero code end -->
-  <!-- Main content code start -->
-  <div class="columns">
-    <div class="column is-one-fifth" style="background-color:cadetblue;">
-      First column
-      <!-- Kevin working on this one -->
-      <div class="level fix-margin">
-        <button id="recipe-btn" class="level-left button">Search Recipes</button>
-        <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
-        <button id="clear-btn" class="level-right button">Clear</button>
-        <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
-      </div>
-      <form autocomplete="off" action="/action_page.php">
-        <div class="autocomplete" style="width:300px;">
-          <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
-        </div>
-      </form>
-    </div>
-    <div class="column" style="background-color: whitesmoke;">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum distinctio natus aperiam hic? Saepe
-        quibusdam beatae laborum porro rerum voluptas eveniet dolorem aperiam deserunt labore vero velit quis
-        iure impedit deleniti voluptatem aliquam autem minima iusto dicta non necessitatibus, reiciendis eos.
-        Repudiandae nam nostrum totam ducimus? Minima sed adipisci consequuntur possimus aspernatur quibusdam
-        nobis, animi hic praesentium atque voluptatum ratione et repudiandae ipsum consectetur, aliquam
-        molestiae omnis non fuga maxime nulla, quaerat velit. Ea ducimus totam facilis delectus corporis
-        officiis nobis facere quisquam nemo molestiae pariatur reprehenderit quasi, necessitatibus vel fugit,
-        omnis cumque! Dolor laboriosam quis repudiandae. Sint doloremque cupiditate ullam inventore officia
-        pariatur velit placeat, voluptas non consequatur autem. Quae impedit consequuntur quidem ex quibusdam
-        vitae dolorum in quasi? Rem iure commodi suscipit ad voluptatum magnam maxime culpa! Nulla, deleniti.
-        Neque nulla culpa aliquid dicta doloribus, in aperiam dolorem iure illo, assumenda corporis doloremque,
-        consectetur voluptatem. Nisi porro laborum enim quaerat nihil harum voluptates quasi dolor quos odio
-        officia nam consequatur quibusdam quis accusantium obcaecati optio, voluptatem perferendis asperiores
-        cum vitae. Aspernatur, dolor maiores dolorem earum molestiae quae laboriosam velit sed! Blanditiis
-        numquam, officiis optio provident reiciendis cumque natus earum nihil fugiat porro incidunt vitae odio?
-        Maiores, consequatur voluptas?</p>
-    </div>
-    <div class="column is-one-fifth" style="background-color: cadetblue;">
-      Third column
-    </div>
-  </div>
-  <!-- Main content code end -->
-  <!-- JS link  -->
-  <script src="script.js"></script>
 
-  </main>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About the Developers
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Your Saved Recipes</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar code end -->
+    <!-- Hero code start -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="columns pt-6 pr-6">
+                <div class="column is-2 is-offset-10">
+                    <h1 class="title is-1">
+                        Served
+                    </h1>
+                    <h2 class="subtitle is-4">
+                        Dinner is served.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero code end -->
+    <!-- Main content code start -->
+    <div class="columns">
+        <div class="column is-one-fifth" style="background-color:cadetblue;">
+            First column
+            <!-- Kevin working on this one -->
+            <div class="columns is-gapless">
+                <button id="recipe-btn" class="button">Search Recipes</button>
+                <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
+                <button id="clear-btn" class="button column is-one-third">Clear</button>
+                <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
+            </div>
+            <div class="columns is-gapless">
+                <form autocomplete="off" action="/action_page.php">
+                    <div class="autocomplete">
+                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
+                    </div>
+                </form>
+                <button id="add-btn" class="button column is-one-third">Add</button>
+            </div>
+            <section id="ingred-list">
+
+            </section>
+        </div>
+        <div class="column" style="background-color: whitesmoke;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum distinctio natus aperiam hic? Saepe
+                quibusdam beatae laborum porro rerum voluptas eveniet dolorem aperiam deserunt labore vero velit quis
+                iure impedit deleniti voluptatem aliquam autem minima iusto dicta non necessitatibus, reiciendis eos.
+                Repudiandae nam nostrum totam ducimus? Minima sed adipisci consequuntur possimus aspernatur quibusdam
+                nobis, animi hic praesentium atque voluptatum ratione et repudiandae ipsum consectetur, aliquam
+                molestiae omnis non fuga maxime nulla, quaerat velit. Ea ducimus totam facilis delectus corporis
+                officiis nobis facere quisquam nemo molestiae pariatur reprehenderit quasi, necessitatibus vel fugit,
+                omnis cumque! Dolor laboriosam quis repudiandae. Sint doloremque cupiditate ullam inventore officia
+                pariatur velit placeat, voluptas non consequatur autem. Quae impedit consequuntur quidem ex quibusdam
+                vitae dolorum in quasi? Rem iure commodi suscipit ad voluptatum magnam maxime culpa! Nulla, deleniti.
+                Neque nulla culpa aliquid dicta doloribus, in aperiam dolorem iure illo, assumenda corporis doloremque,
+                consectetur voluptatem. Nisi porro laborum enim quaerat nihil harum voluptates quasi dolor quos odio
+                officia nam consequatur quibusdam quis accusantium obcaecati optio, voluptatem perferendis asperiores
+                cum vitae. Aspernatur, dolor maiores dolorem earum molestiae quae laboriosam velit sed! Blanditiis
+                numquam, officiis optio provident reiciendis cumque natus earum nihil fugiat porro incidunt vitae odio?
+                Maiores, consequatur voluptas?</p>
+        </div>
+        <div class="column is-one-fifth" style="background-color: cadetblue;">
+            Third column
+        </div>
+    </div>
+    <!-- Main content code end -->
+    <!-- JS link  -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+
+    </main>
 </body>
 
 </html>

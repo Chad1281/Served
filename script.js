@@ -99,11 +99,26 @@ function autocomplete(inp, arr) {
 
 autocomplete(document.getElementById("myInput"), ingredients);
 
-$('#clear-btn').on("click", function () {
-    // take whatever items are in the list and clear them
+$('#add-btn').on("click", function () {
 
-})
+    var ingredientList = $("<ul>").text($('#myInput').val());
+    ingredientList.addClass('column card is-gapless is-two-thirds');
 
-$('#recipe-btn').on("click", function () {
+    var ingredientClear = $("<button>").text('x');
+    ingredientClear.addClass('button card is-gapless');
+    
+
+
+
+
+    $('#ingred-list').append(ingredientList, ingredientClear);
+
+    $('#clear-btn').on("click", function () {
+        // take whatever items are in the list and clear them
+        $('#ingred-list').empty();
+    
+    })
+
     // take whatever items are in the list and return recipe cards
 })
+
