@@ -1,4 +1,5 @@
 var ingredients = ["beans", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", ""]
+// TODO: Make each first letter capitalized automatically via CharAt[0]
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -99,11 +100,42 @@ function autocomplete(inp, arr) {
 
 autocomplete(document.getElementById("myInput"), ingredients);
 
-$('#clear-btn').on("click", function () {
-    // take whatever items are in the list and clear them
+function capitalizeFirstLetter(string) {
+    return String(string).charAt(0).toUpperCase() + string.slice(1);
+
+}
+
+$('#add-btn').on("click", function () {
+
+    // grabs the text typed into autocomplete form
+    // capitalizes the input value
+    var ingredientList = $("<ul>").text(capitalizeFirstLetter($('#myInput').val()));
+
+    // adds styling to the ul text element
+    ingredientList.attr("class", "box column is-three-fifths").css("margin-bottom", 3 + "%");
+
+    // creates a button for deleting ul text element
+    var ingredientClear = $("<button>").text('x').attr("class", "button column is-one-fifth").attr("id", "this-clear-btn").css("padding", 0);
+
+    $('#this-clear-btn').on("click", function () {
+        $('#ingred-list').empty();
+    
+    })
+
+    // appends styled ul text to HTML container
+    $('#ingred-list').append(ingredientList, ingredientClear);
 
 })
 
-$('#recipe-btn').on("click", function () {
-    // take whatever items are in the list and return recipe cards
+ // on click function for emptying the entire list
+ $('#clear-btn').on("click", function () {
+    $('#ingred-list').empty();
 })
+
+
+
+
+
+
+
+        // take whatever items are in the list and return recipe cards
