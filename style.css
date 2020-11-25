@@ -34,10 +34,10 @@ div.columns.is-gapless {
 }
 
 section ul {
-  margin: 1%;
-  padding: 1%;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
 }
-
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
