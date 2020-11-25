@@ -38,6 +38,7 @@ section ul {
   display: flex;
   flex-wrap: wrap;
 }
+
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
@@ -69,7 +70,6 @@ div .level {
     margin-bottom: .5rem !important;
 }
 
-
 /* Hero background - Charli's work */
 .hero-body {
     background-image: url("img/heroimg.jpg");
@@ -81,3 +81,4 @@ div .level {
     color:cadetblue;
     font-size: x-large;
 }
+
