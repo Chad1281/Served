@@ -87,16 +87,15 @@
     <!-- Hero code end -->
     <!-- Main content code start -->
     <div class="columns">
-        <div class="column is-one-fifth" style="background-color:cadetblue;">
-            First column
+        <div class="column is-one-fifth" style="background-color:cadetblue;padding-top:0;">
             <!-- Kevin working on this one -->
-            <div class="columns is-gapless">
+            <div class="columns is-gapless" style="margin-bottom:3px">
                 <button id="recipe-btn" class="button">Search Recipes</button>
                 <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
                 <button id="clear-btn" class="button column is-one-third">Clear</button>
                 <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
             </div>
-            <div class="columns is-gapless">
+            <div class="columns is-gapless" style="margin-bottom:3px">
                 <form autocomplete="off" action="/action_page.php">
                     <div class="autocomplete">
                         <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
@@ -150,7 +149,6 @@
     </div>
   </footer>
   <!-- JS link  -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
