@@ -149,7 +149,7 @@ $('#add-btn').on("click", function () {
 
 
 
-        var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+carrots,+flour,+potatoes,+milk&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
+        var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients + "&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
 
         $.ajax({
             url: queryIngredientsURL,
@@ -202,9 +202,13 @@ $('#add-btn').on("click", function () {
                     var percentMatch = parseInt((usedCount/(missedCount + usedCount))* 100) + "% match";
                     var cardBody = $("<div>").attr("class", "card-body");
                     var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
-                    var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
-                    var button = $("<button>").attr("class", "btn btn-primary").text("Button");
-                    cardBody.append(h4, pTag, button);
+                    var pTag = $("<p>").attr("class", "card-text").text(percentMatch);                    
+                    var button = $("<button>").attr("class", "btn btn-primary").text("Go to Recipe");
+                    var saveBtn = $("<a href:''>").attr("id", "save-button");
+                    var saveEmptyHeart = $("<img>").attr("src", "./img/emptyHeart.png");
+                    var saveHeart = $("<img style='display: none'>").attr("src", "./img/heart.png");
+                    saveBtn.append(saveEmptyHeart, saveHeart);
+                    cardBody.append(h4, pTag, button, saveBtn);
                     cardInnerDiv.append(cardBody);
         
                     // Append card inner div to outer div
@@ -221,6 +225,10 @@ $('#add-btn').on("click", function () {
         
                     // increment my index
                     cardIndex++;
+
+                    $(saveBtn).click(function() {
+                        $("img").toggle();
+                      });
                 }
             }
         })     
