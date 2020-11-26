@@ -111,15 +111,15 @@ $('#add-btn').on("click", function () {
     // capitalizes the input value
     var ingredientList = $("<ul>").text(capitalizeFirstLetter($('#myInput').val()))
 
-    
-    if($('#myInput').val() !== ""){
+
+    if ($('#myInput').val() !== "") {
 
         // adds icon to the ul text element 
         ingredientList.append('<img id="trash" src="img/trashcan.png" style="width: 20%;padding-left: 5px; padding-bottom: 3px;"    />');
-        
+
         // adds styling to the ul text element
         ingredientList.attr("class", "box column is-three-fifths").css("margin-bottom", 3 + "%").attr('id', 'theUl');
-        
+
     }
 
 
@@ -135,7 +135,7 @@ $('#add-btn').on("click", function () {
     // appends styled ul text to HTML container
     $('#ingred-list').append(ingredientList);
 
-    
+
 
 })
 
@@ -159,34 +159,28 @@ function findListIngredients(response) {
     $.ajax({
         url: queryIngredientList,
         method: "GET"
-      }).then(function(res) {
+    }).then(function (res) {
 
         // working code goes here
         console.log(res.results);
-      })
+    })
 
 
 }
 
 findListIngredients();
 
-$('#recipe-btn').on('click', function(){
+$('#recipe-btn').on('click', function () {
     console.log($('#ingred-list').text());
-    
-   $( "ul" ).each(function() {
-        console.log(findListIngredients( $( this ).text() + "," ));
-      });
+
+    $("ul").each(function () {
+        console.log(findListIngredients($(this).text() + ","));
+    });
 
 })
 
 
-
-
-
-
-
-
-var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+carrots,+flour,+potatoes,+milk&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
+var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients + "&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
 
 $.ajax({
     url: queryIngredientsURL,
@@ -240,8 +234,12 @@ $.ajax({
             var cardBody = $("<div>").attr("class", "card-body");
             var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
             var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
-            var button = $("<button>").attr("class", "btn btn-primary").text("Button");
-            cardBody.append(h4, pTag, button);
+            var button = $("<button>").attr("class", "btn btn-primary").text("Go to Recipe");
+            var saveBtn = $("<a href:''>").attr("id", "save-button");
+            var saveEmptyHeart = $("<img>").attr("src", "./img/emptyHeart.png");
+            var saveHeart = $("<img style='display: none'>").attr("src", "./img/heart.png");
+            saveBtn.append(saveEmptyHeart, saveHeart);
+            cardBody.append(h4, pTag, button, saveBtn);
             cardInnerDiv.append(cardBody);
 
             // Append card inner div to outer div
@@ -258,6 +256,13 @@ $.ajax({
 
             // increment my index
             cardIndex++;
+
+            $(saveBtn).click(function () {
+                $("img").toggle();
+            });
         }
     }
-})     
+
+    // increment my index
+    cardIndex++;
+})
