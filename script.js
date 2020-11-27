@@ -145,16 +145,18 @@ function itemGen() {
 // function to delete each list item
 function deleteBorgar(el) {
 
-    var index = ($('#delete-me').closest('div').text());
+    // this one is bad
+    // I need to find each one in particular
+    var index = ($(el).closest('div').text());
       
     for (var i = 0; i < data.length; i++){ 
                                    
         if ( data[i] === index) { 
             data.splice(i, 1); 
-            i--; 
+            
         }
     }
-
+    
     el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
