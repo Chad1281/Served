@@ -41,9 +41,10 @@ TODO:
 
 README
 Powerpoint Presentation
+Developer page  
 
-<!--Recipe card function that takes list data -> recipe button search
-Enter button to add ingredients-->
+Recipe card function that takes list data -> recipe button search
+Enter button to add ingredients
 
 Recipe URL
 
@@ -52,4 +53,3 @@ Your saved recipes = local storage
 
 3rd column--nutrition/dietary restrictions
 Landing page
-<!-- Should I work on landing page? -->
