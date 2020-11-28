@@ -1,4 +1,4 @@
-var ingredients = ["beans", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", ""];
+var ingredients = ["beans", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", "beef", "chicken", "salmon", "tuna", "cod", "anchovies", "spinach", "tomatoes", "broccoli", "butter", "turmeric", "feta", "lettuce", "onions", "celery", "green onion", "radish", "ketchup", "mustard", "bread", "soy sauce", "flour", "sugar", "brown sugar", "garlic", "zucchini", "mint", "turnip", "asparagus", "mushrooms", "pork", "chili", "cayenne", "poblano", "bell pepper", "shrimp", "jalapeno", "steak", "raspberries", "blueberries", "blackberries", "apricots", "figs", "raisins", "grapes", ""];
 
 var data = [];
 var tempData = [];
@@ -135,7 +135,7 @@ function itemGen() {
     // appends styled text to HTML container
     guiList.attr("class", "box column is-three-fifths").attr("id", "delete-me").css("margin-bottom", 3 + "%");
 
-    var trashBtn = $("<img  id='img' src='img/trashcan.png'  style='width:12%; margin-bottom:4px; margin-left:4px; cursor:pointer' onclick='deleteBorgar(this)' />");   
+    var trashBtn = $("<img  id='img' src='img/trashcan.png'  style='width:12%; margin-bottom:4px; margin-left:4px; cursor:pointer' onclick='deleteBorgar(this)' />");
 
     guiList.append(trashBtn);
     $('#ingred-list').append(guiList);
@@ -148,19 +148,19 @@ function deleteBorgar(el) {
     // this one is bad
     // I need to find each one in particular
     var index = ($(el).closest('div').text());
-      
-    for (var i = 0; i < data.length; i++){ 
-                                   
-        if ( data[i] === index) { 
-            data.splice(i, 1); 
-            
+
+    for (var i = 0; i < data.length; i++) {
+
+        if (data[i] === index) {
+            data.splice(i, 1);
+
         }
     }
-    
+
     el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
-$('#add-btn').on("click", function () {
+$('#add-btn').on("click", "", function () {
 
     // push div list items to array
     var ingredientList = capitalizeFirstLetter($('#myInput').val());
@@ -175,6 +175,9 @@ $('#add-btn').on("click", function () {
     tempData = [];
 
     document.getElementById('myInput').value = '';
+
+    console.log(data);
+    console.log(data.toString());
 })
 
 // on click function for emptying the entire list
@@ -185,98 +188,114 @@ $('#clear-btn').on("click", function () {
 
 // take whatever items are in the list and return recipe cards
 
+$('#recipe-btn').on('click', function () {
 
+    // clear any previous carousel content
+    $('.carousel-item').remove();
+    $('.carousel-indicators').empty();
 
+    // take whatever is in the array
+    el = data.toString();
 
-
-
-var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients + "&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
-
-$.ajax({
-    url: queryIngredientsURL,
-    method: "GET"
-}).then(function (response) {
-
-
-    var caraselCardWrapper = $(".carousel-inner");
-    var caraselIndicatorWrapper = $(".carousel-indicators");
-
-    var cardsPerPage = 4;
-    var isActiveCardSet = false;
-
-
-    var caraselItem, indicatorItem;
-    var cardIndex = 0;
-    var indicatorIndex = 0;
-
-    while (cardIndex < response.length) {
-
-        if (isActiveCardSet === false) {
-            caraselItem = $("<div>").attr("class", "carousel-item active");
-            indicatorItem = $("<li>").attr("data-target", "#multi-item-example").attr("data-slide-to", indicatorIndex).attr("class", "active");
-
-            isActiveCardSet = true;
-        } else {
-            caraselItem = $("<div>").attr("class", "carousel-item");
-            indicatorItem = $("<li>").attr("data-target", "#multi-item-example").attr("data-slide-to", indicatorIndex);
-        }
-
-        // Append indicator
-        caraselIndicatorWrapper.append(indicatorItem);
-        indicatorIndex++; // Add 1 to indicator index
-
-        while (cardIndex < response.length) {
-
-            // Create main div that holds your single card
-            var cardOuterDiv = $("<div>").attr("class", "col-md-3 left");
-
-            // Create inner div that will hold the card image and body
-            var cardInnerDiv = $("<div>").attr("class", "card");
-
-            // Create image
-            var image = $("<img>").attr("class", "card-img-top").attr("src", response[cardIndex].image);
-            cardInnerDiv.append(image);
-
-
-
-            // Create body
-            var recipeTitle = response[cardIndex].title;
-            var missedCount = response[cardIndex].missedIngredientCount;
-            var usedCount = response[cardIndex].usedIngredientCount;
-            var percentMatch = parseInt((usedCount / (missedCount + usedCount)) * 100) + "% match";
-            var cardBody = $("<div>").attr("class", "card-body");
-            var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
-            var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
-            var button = $("<button>").attr("class", "btn btn-primary").text("Go to Recipe");
-            var saveBtn = $("<a href:''>").attr("id", "save-button");
-            var saveHeart = $("<img>").attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
-
-            saveBtn.append(saveHeart);
-
-            cardBody.append(h4, pTag, button, saveBtn);
-            cardInnerDiv.append(cardBody);
-
-            // Append card inner div to outer div
-            cardOuterDiv.append(cardInnerDiv);
-
-            // Append card outer div to carasel item, and then to main carasel wrapper
-            caraselItem.append(cardOuterDiv);
-
-            caraselCardWrapper.append(caraselItem);
-
-            if ((cardIndex + 1) % cardsPerPage === 0) {
-                cardIndex++;
-                break;
-            }
-            // increment my index
-            cardIndex++;
-
-        }
-    }
-
-    heartClicker();
+    // put it into the query ingredient URL
+    findListIngredients(el);
 })
 
+function findListIngredients() {
+    
+    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
+
+    $.ajax({
+        url: queryIngredientsURL,
+        method: "GET"
+    }).then(function (response) {
+
+
+        var caraselCardWrapper = $(".carousel-inner");
+        var caraselIndicatorWrapper = $(".carousel-indicators");
+
+        var cardsPerPage = 4;
+        var isActiveCardSet = false;
+
+
+        var caraselItem, indicatorItem;
+        var cardIndex = 0;
+        var indicatorIndex = 0;
+
+     
+    while (cardIndex < response.length) {
+
+            // class "active" attaches to whatever carousel block is displayed
+            if (isActiveCardSet === false) {
+                caraselItem = $("<div>").attr("class", "carousel-item active");
+                indicatorItem = $("<li>").attr("data-target", "#multi-item-example").attr("data-slide-to", indicatorIndex).attr("class", "active");
+
+                isActiveCardSet = true;
+            } else {
+                caraselItem = $("<div>").attr("class", "carousel-item");
+                indicatorItem = $("<li>").attr("data-target", "#multi-item-example").attr("data-slide-to", indicatorIndex);
+            }
+
+            // Append indicator
+            caraselIndicatorWrapper.append(indicatorItem);
+            indicatorIndex++; // Add 1 to indicator index
+
+            while (cardIndex < response.length) {
+
+                // Create main div that holds your single card
+                var cardOuterDiv = $("<div>").attr("class", "col-md-3 left");
+
+                // Create inner div that will hold the card image and body
+                var cardInnerDiv = $("<div>").attr("class", "card");
+
+                // Create image
+                var image = $("<img>").attr("class", "card-img-top").attr("src", response[cardIndex].image);
+                cardInnerDiv.append(image);
+
+
+
+                // Create body
+                var recipeTitle = response[cardIndex].title;
+                var missedCount = response[cardIndex].missedIngredientCount;
+                var usedCount = response[cardIndex].usedIngredientCount;
+                var percentMatch = parseInt((usedCount / (missedCount + usedCount)) * 100) + "% match";
+                var cardBody = $("<div>").attr("class", "card-body");
+                var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
+                var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
+                var button = $("<button>").attr("class", "btn btn-primary").text("Go to Recipe");
+                var saveBtn = $("<a href:''>").attr("id", "save-button");
+                var saveHeart = $("<img>").attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
+
+                saveBtn.append(saveHeart);
+
+                cardBody.append(h4, pTag, button, saveBtn);
+                cardInnerDiv.append(cardBody);
+
+                // Append card inner div to outer div
+                cardOuterDiv.append(cardInnerDiv);
+
+                // Append card outer div to carasel item, and then to main carasel wrapper
+                caraselItem.append(cardOuterDiv);
+
+                caraselCardWrapper.append(caraselItem);
+
+                if ((cardIndex + 1) % cardsPerPage === 0) {
+                    cardIndex++;
+                    break;
+                }
+                // increment my index
+                cardIndex++;
+                heartClicker();
+
+
+
+            }
+        }
+
+
+    heartClicker();
+  })
+}
 
 function heartClicker() {
     $('.heart-btn').on("click", function () {
@@ -289,6 +308,5 @@ function heartClicker() {
             $(this).addClass('empty').removeClass('full');
 
         }
-
     });
 }

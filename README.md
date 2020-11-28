@@ -21,7 +21,11 @@ To add pulled code from main branch to different branch
 
 $ git pull origin main
 
- -->
+ Delete in github repository
+    $ git push --delete origin <branch-name>
+Delete locally
+    $ git branch -D <branch-name>
+ 
 
 <!-- 10 minutes
 Elevator Pitch: One minute description, 1 minute
@@ -33,3 +37,18 @@ Directions for future Development, 2 minutes
 10 minutes
 -->
 
+TODO:
+
+README
+Powerpoint Presentation
+
+Recipe card function that takes list data -> recipe button search
+Enter button to add ingredients
+
+Recipe URL
+
+Heart clicker
+Your saved recipes = local storage
+
+3rd column--nutrition/dietary restrictions
+Landing page
