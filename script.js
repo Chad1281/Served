@@ -225,7 +225,6 @@ function findListIngredients() {
      
     while (cardIndex < response.length) {
 
-
             // class "active" attaches to whatever carousel block is displayed
             if (isActiveCardSet === false) {
                 caraselItem = $("<div>").attr("class", "carousel-item active");
