@@ -82,3 +82,8 @@ div .level {
     font-size: x-large;
 }
 
+
+.recipe-card-saved {
+  width: 400px;
+  margin: 20px;
+}
