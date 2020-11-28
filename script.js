@@ -212,7 +212,7 @@ $.ajax({
     while (cardIndex < response.length) {
 
         if (isActiveCardSet === false) {
-            // caraselItem = $("<div>").attr("class", "carousel-item active");
+            caraselItem = $("<div>").attr("class", "carousel-item active");
             indicatorItem = $("<li>").attr("data-target", "#multi-item-example").attr("data-slide-to", indicatorIndex).attr("class", "active");
 
             isActiveCardSet = true;
