@@ -222,8 +222,8 @@ function findListIngredients() {
         var cardIndex = 0;
         var indicatorIndex = 0;
 
-        while (cardIndex < response.length) {
-            heartClicker();
+     
+    while (cardIndex < response.length) {
 
 
             // class "active" attaches to whatever carousel block is displayed
@@ -292,9 +292,11 @@ function findListIngredients() {
 
             }
         }
-    })
-}
 
+
+    heartClicker();
+  })
+}
 
 function heartClicker() {
     $('.heart-btn').on("click", function () {
