@@ -210,7 +210,6 @@ $.ajax({
     var indicatorIndex = 0;
 
     while (cardIndex < response.length) {
-        heartClicker();
 
         if (isActiveCardSet === false) {
             // caraselItem = $("<div>").attr("class", "carousel-item active");
@@ -274,6 +273,8 @@ $.ajax({
 
         }
     }
+
+    heartClicker();
 })
 
 
