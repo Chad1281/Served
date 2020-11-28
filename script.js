@@ -159,6 +159,30 @@ function deleteBorgar(el) {
 
     el.parentNode.parentNode.removeChild(el.parentNode);
 }
+$('#myInput').bind("enterKey", function (e) {
+    // push div list items to array
+    var ingredientList = capitalizeFirstLetter($('#myInput').val());
+
+    // push the input value into a temporary array
+    tempData.push(ingredientList);
+
+    // run validation function/item creation
+    itemGen();
+
+    // empty temporary array
+    tempData = [];
+
+    document.getElementById('myInput').value = ''; console.log('hai')
+
+    console.log(data);
+    console.log(data.toString());
+});
+
+$('#myInput').keyup(function (e) {
+    if (e.keyCode == 13) {
+        $(this).trigger("enterKey");
+    }
+});
 
 $('#add-btn').on("click", "", function () {
 
@@ -222,8 +246,9 @@ function findListIngredients() {
         var cardIndex = 0;
         var indicatorIndex = 0;
 
-     
-    while (cardIndex < response.length) {
+        while (cardIndex < response.length) {
+            heartClicker();
+
 
             // class "active" attaches to whatever carousel block is displayed
             if (isActiveCardSet === false) {
@@ -291,11 +316,9 @@ function findListIngredients() {
 
             }
         }
-
-
-    heartClicker();
-  })
+    })
 }
+
 
 function heartClicker() {
     $('.heart-btn').on("click", function () {
