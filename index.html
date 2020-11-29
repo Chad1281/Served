@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
   <!-- Navbar code start -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -96,26 +95,59 @@
         </h2>
   </section>
   <!-- Hero code end -->
-  <!-- Main content code start -->
-  <div class="columns">
-    <div class="column is-one-fifth" style="background-color:cadetblue;">
-      First column
-      <!-- Kevin working on this one -->
-      <div class="level fix-margin">
-        <button id="recipe-btn" class="level-left button">Search Recipes</button>
-        <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
-        <button id="clear-btn" class="level-right button">Clear</button>
-        <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
-      </div>
-      <form autocomplete="off" action="/action_page.php">
-        <div class="autocomplete" style="width:300px;">
-          <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
+    <!-- Main content code start -->
+    <div class="columns">
+        <div class="column is-one-fifth" style="background-color:cadetblue;padding-top:0;">
+            <!-- Kevin working on this one -->
+            <div class="columns is-gapless" style="margin-bottom:3px">
+                <button id="recipe-btn" class="button">Search Recipes</button>
+                <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
+                <button id="clear-btn" class="button column is-one-third">Clear</button>
+                <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
+            </div>
+            <div class="columns is-gapless">
+                <form autocomplete="off" action="/action_page.php">
+                    <div class="autocomplete">
+                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
+                    </div>
+                </form>
+                <button id="add-btn" class="button column is-one-third">Add</button>
+            </div>
+            <section id="ingred-list" class="columns" style="display: flex;
+            flex-wrap: wrap; justify-content:center;">
+
+            </section>
+        </div>
+        <div class="column" style="background-color: whitesmoke;">
+            <!--Carousel Wrapper-->
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                <!--Controls-->
+                <div class="controls-top">
+                    <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+                    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!--/.Controls-->
+
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                </ol>
+                <!--/.Indicators-->
+
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox"></div>
+                <!--/.Slides-->
+
+            </div>
+            <!--/.Carousel Wrapper-->
+        </div>
+        <div class="column is-one-fifth" style="background-color: cadetblue;">
+            Third column
         </div>
     </div>
-
-
-    <!-- Main content code end -->
-
+  
+  
+  <!-- Main content code end -->
     <!-- Footer below-->
     <footer class="footer">
       <div class="content has-text-centered">
@@ -135,6 +167,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"></script>
+
     <!-- <script src="assets/js/mdb.min.js"></script> -->
     <script src="script.js"></script>
 
