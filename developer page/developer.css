@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 16px Arial;
+  background-color: #f5cd79;
+  /* padding: 30px;
+    margin: 30px; */
+}
+
+/*** Centered Logo ***/
+.served {
+  padding: 5px;
+  margin: 10px;
+  font-family: "Bad Script";
+  letter-spacing: 18px;
+  font-size: 50px;
+  color: #f5cd79;
+  font-weight: 500;
+}
+
+/*** Nav Bar ***/
+#navbarBasicExample {
+  background-color: #ffffff;
+}
+
+/*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
+a.button.is-primary {
+  background-color: #f5cd79;
+}
+a.button.is-primary.is-hovered,
+a.button.is-primary:hover {
+  background-color: #f7d794;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* Developer Img Styling */
+.card-img-top {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+/* Developer Name */
+.card-title {
+  margin: 12px;
+  font-size: 1.5em;
+}
+
+.card-text {
+  margin: 12px;
+  font-size: 1em;
+}

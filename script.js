@@ -235,7 +235,9 @@ $('#recipe-btn').on('click', function () {
 
 function findListIngredients() {
 
-    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
+    
+    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=5&apiKey=87b70540ba274bf5b50d685b85c91600";
+
 
     $.ajax({
         url: queryIngredientsURL,
@@ -286,10 +288,12 @@ function findListIngredients() {
                 var missedCount = response[cardIndex].missedIngredientCount;
                 var usedCount = response[cardIndex].usedIngredientCount;
                 var percentMatch = parseInt((usedCount / (missedCount + usedCount)) * 100) + "% match";
+                var recipeId = response[cardIndex].id;
+                // console.log(recipeId);
                 var cardBody = $("<div>").attr("class", "card-body");
                 var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
                 var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
-                var button = $("<button>").attr("class", "btn btn-primary").text("Go to Recipe");
+                var button = $("<button>").attr("id", recipeId).addClass("btn btn-primary recipeBtn").text("Go to Recipe");
                 var saveBtn = $("<a href:''>").attr("id", "save-button");
                 var saveHeart = $("<img>").attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
 
@@ -312,11 +316,11 @@ function findListIngredients() {
                 }
                 // increment my index
                 cardIndex++;
-
             }
         }
-        heartClicker();
-    })
+    heartClicker();
+    getRecipe();
+  })
 }
 
 function heartClicker() {
@@ -331,4 +335,27 @@ function heartClicker() {
 
         }
     });
+
+}
+
+
+
+
+
+function getRecipe() {
+
+    $(".recipeBtn").click(function () {
+        var recipeID = $(this).attr("id");
+        var queryRecipeURL = "https://api.spoonacular.com/recipes/" + recipeID + "/information?apiKey=87b70540ba274bf5b50d685b85c91600";        
+
+        $.ajax({
+            url: queryRecipeURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            var sourceURL = response.sourceUrl;
+            console.log(sourceURL);
+            window.open(sourceURL);
+        })
+    })
 }
