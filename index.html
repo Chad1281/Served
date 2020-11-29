@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <title>Served Project</title>
+  <title>Served | Recipes from Home</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
 <body>
@@ -15,46 +16,53 @@
   <!-- Navbar code start -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item">
-        <h1 class="navbar-served has-text-weight-bold">Served</h1>
-      </a>
+      <a class="navbar-item" href="..."">
+            <img src=" /Users/katelynncowan/Desktop/Bootcamp/UTA-AUS-FSF-PT-10-2020-U-C/Projects/food-serving.png"
+        width="35" height="100">
 
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+          data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item">
-          Home
+          HOME
         </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            More
+            MORE
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About the Developers
+            <a class="navbar-item" href="#developers">
+              about the developers
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
+            <a class="navbar-item" href="#footer">
+              report an issue
             </a>
           </div>
         </div>
       </div>
-
+      <div class="served">
+        <!----------- Imported Google Font for SERVED Logo --------->
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+        </style>
+        SERVED
+      </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
             <a class="button is-primary">
-              <strong>Your Saved Recipes</strong>
+              <h2>Your Saved Recipes</h2>
             </a>
           </div>
         </div>
@@ -64,18 +72,18 @@
   <!-- Navbar code end -->
   <!-- Hero code start -->
   <section class="hero">
+    <!-- <img src="img/heroimg.jpg"> -->
     <div class="hero-body">
-      <div class="columns pt-6 pr-6">
-        <div class="column is-2 is-offset-10">
-          <h1 class="title is-1">
-            Served
-          </h1>
-          <h2 class="subtitle is-4">
-            Dinner is served.
-          </h2>
-        </div>
-      </div>
-    </div>
+      <div class="container">
+        <h1 class="hero-title">
+          <!--- added google fonts API for hero text overlay--->
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+          </style>
+          serving confidence in the kitchen
+        </h1>
+        <h2 class="subtitle">
+        </h2>
   </section>
   <!-- Hero code end -->
   <!-- Main content code start -->
@@ -124,8 +132,8 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Copyright © 2020 Served</strong> 
-        <p>Contributors: Kevin Cho, Chad Cook, Katie Cowan, and Charli Spilecki</p>
+        <strong>Copyright © 2020 Served</strong>
+      <p>Contributors: Kevin Cho, Chad Cook, Katie Cowan, and Charli Spilecki</p>
       </p>
     </div>
   </footer>

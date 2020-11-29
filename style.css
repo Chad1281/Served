@@ -1,8 +1,57 @@
-* { 
-    box-sizing: border-box; 
+* {
+  box-sizing: border-box;
 }
 body {
   font: 16px Arial;
+  background-color: #f5cd79;
+}
+/*** Centered Logo ***/
+.served {
+  padding: 5px;
+  margin: 10px;
+  font-family: "Bad Script";
+  letter-spacing: 18px;
+  font-size: 50px;
+  color: #f5cd79;
+  font-weight: 500;
+}
+
+/*** Nav Bar ***/
+.navbar {
+  box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.3);
+}
+#navbarBasicExample {
+  background-color: #ffffff;
+}
+
+/*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
+a.button.is-primary {
+  background-color: #f5cd79;
+}
+a.button.is-primary.is-hovered,
+a.button.is-primary:hover {
+  background-color: #f7d794;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/*** HERO STYLING ***/
+.hero {
+  background-image: url("assets/");
+  height: 700px;
+  width: auto;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+}
+.hero-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #ced6e0;
+  font-size: 50px;
+  font-family: "Bebas Neue";
 }
 .autocomplete {
   /*the container must be positioned relative:*/
@@ -15,13 +64,13 @@ input {
   padding: 10px;
   font-size: 16px;
 }
-input[type=text] {
+input[type="text"] {
   background-color: #f1f1f1;
   border-radius: 4px;
   height: 40px;
   width: 100%;
 }
-input[type=submit] {
+input[type="submit"] {
   background-color: DodgerBlue;
   color: #fff;
 }
@@ -64,18 +113,17 @@ section ul {
 }
 
 div .level {
-    margin-bottom: .5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 /* Hero background - Charli's work */
 .hero-body {
-    background-image: url("img/heroimg.jpg");
-    height: 800px;
-    background-size: cover;
+  background-image: url("img/heroimg.jpg");
+  height: 800px;
+  background-size: cover;
 }
 
 .navbar-served {
-    color:cadetblue;
-    font-size: x-large;
+  color: cadetblue;
+  font-size: x-large;
 }
-
