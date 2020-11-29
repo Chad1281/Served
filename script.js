@@ -295,8 +295,31 @@ function findListIngredients() {
                 var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
                 var button = $("<button>").attr("id", recipeId).addClass("btn btn-primary recipeBtn").text("Go to Recipe");
                 var saveBtn = $("<a href:''>").attr("id", "save-button");
-                var saveHeart = $("<img>").attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
-
+                var saveHeart = $("<img>")
+                if (isRecipeSaved(response[cardIndex].id)) {
+                    saveHeart.attr("src", "./img/heart.png").attr("class", "heart-btn");
+                } else {
+                    saveHeart.attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
+                }
+                let recipeToSave = response[cardIndex]
+                saveHeart.on("click", function() {
+                    // Toggles the empty/full heart
+                    if ($(this).hasClass("empty")) {
+                        $(this).attr('src', './img/heart.png');
+                        $(this).addClass('full').removeClass('empty');
+                
+                        // Save recipe in local storage
+                        saveRecipe(recipeToSave)
+                    }
+                    else {
+                        $(this).attr('src', './img/emptyHeart.png');
+                        $(this).addClass('empty').removeClass('full');
+                
+                        // Unsave recipe in local storage
+                        unsaveRecipe(recipeToSave.id)
+                    }
+                })
+    
                 saveBtn.append(saveHeart);
 
                 cardBody.append(h4, pTag, button, saveBtn);
@@ -318,24 +341,8 @@ function findListIngredients() {
                 cardIndex++;
             }
         }
-    heartClicker();
     getRecipe();
   })
-}
-
-function heartClicker() {
-    $('.heart-btn').on("click", function () {
-        if ($(this).hasClass("empty")) {
-            $(this).attr('src', './img/heart.png');
-            $(this).addClass('full').removeClass('empty');
-        }
-        else {
-            $(this).attr('src', './img/emptyHeart.png');
-            $(this).addClass('empty').removeClass('full');
-
-        }
-    });
-
 }
 
 
