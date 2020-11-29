@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 16px Arial;
+  background-color: #ffffff;
+}
+/*** Centered Logo ***/
+.served {
+  padding: 5px;
+  margin: 10px;
+  font-family: "Bad Script";
+  letter-spacing: 18px;
+  font-size: 50px;
+  color: #f5cd79;
+  font-weight: 500;
+}
+
+/*** Nav Bar ***/
+.navbar {
+  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+#navbarBasicExample {
+  background-color: #ffffff;
+}
+
+/*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
+a.button.is-primary {
+  background-color: #f5cd79;
+}
+a.button.is-primary.is-hovered,
+a.button.is-primary:hover {
+  background-color: #f7d794;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.field {
+  margin: 15px;
+}
+
+.button.button.is-link {
+  background-color: #f5cd79;
+}
+button.button.is-link.is-hovered,
+button.button.is-link:hover {
+  background-color: #f7d794;
+  border-color: transparent;
+  color: #ffffff;
+}
+.button.button.is-link.is-light {
+  background-color: #ffe1a4;
+  color: #ffffff;
+}
+.button.button.is-link.is-light.is-hovered,
+.button.button.is-link.is-light:hover {
+  background-color: #ffe1a4;
+  border-color: transparent;
+  color: #ffffff;
+}
