@@ -1,4 +1,4 @@
-var ingredients = ["beans", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", "beef", "chicken", "salmon", "tuna", "cod", "anchovies", "spinach", "tomatoes", "broccoli", "butter", "turmeric", "feta", "lettuce", "onions", "celery", "green onion", "radish", "ketchup", "mustard", "bread", "soy sauce", "flour", "sugar", "brown sugar", "garlic", "zucchini", "mint", "turnip", "asparagus", "mushrooms", "pork", "chili", "cayenne", "poblano", "bell pepper", "shrimp", "jalapeno", "steak", "raspberries", "blueberries", "blackberries", "apricots", "figs", "raisins", "grapes", ""];
+var ingredients = ["beans", "ginger", "ribs", "guinness", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", "beef", "chicken", "salmon", "tuna", "cod", "anchovies", "spinach", "tomatoes", "broccoli", "butter", "turmeric", "feta", "lettuce", "onions", "celery", "green onion", "radish", "ketchup", "mustard", "bread", "soy sauce", "flour", "sugar", "brown sugar", "garlic", "zucchini", "mint", "turnip", "asparagus", "mushrooms", "pork", "chili", "cayenne", "poblano", "bell pepper", "shrimp", "jalapeno", "steak", "raspberries", "blueberries", "blackberries", "apricots", "figs", "raisins", "grapes", ""];
 
 var data = [];
 var tempData = [];
@@ -113,30 +113,41 @@ function capitalizeFirstLetter(string) {
 // put into an array
 function itemGen() {
     // validate by seeing if the content in the temp array is in the data array
+
+    // get the input value again
     var ingredientList = capitalizeFirstLetter($('#myInput').val());
 
+    // loop through each item in the array for the length of that array
     for (var i = 0; i <= data.length; i++) {
 
-        //if data has tempdata.toString?
+        // if data at any item has tempdata.toString
         if (tempData.toString() === data[i]) {
+
             return;
         }
+        // if tempData string is empty (empty input)
         if (tempData.toString() === "") {
+            
             return;
         }
     }
-    // after looping through every item in list, concat to new array and add it to global array var data
+
+    // after looping through every item in list, combine temp array and data array and set it equal to global array data[]
     newArr = data.concat(tempData);
     data = newArr;
+    // empty temp array so that next item entry doesn't include it
     tempData = [];
 
+    // create a div and store it in var
     var guiList = $("<div>").text(ingredientList);
 
-    // appends styled text to HTML container
+    // style the div
     guiList.attr("class", "box column is-three-fifths").attr("id", "delete-me").css("margin-bottom", 3 + "%");
 
+    // create a trash button for the div
     var trashBtn = $("<img  id='img' src='img/trashcan.png'  style='width:12%; margin-bottom:4px; margin-left:4px; cursor:pointer' onclick='deleteBorgar(this)' />");
 
+    // attach trash button to div, attach div to HTML
     guiList.append(trashBtn);
     $('#ingred-list').append(guiList);
 
@@ -145,27 +156,31 @@ function itemGen() {
 // function to delete each list item
 function deleteBorgar(el) {
 
-    // this one is bad
-    // I need to find each one in particular
+    // find the div text closest to the borgar clicked (this)
     var index = ($(el).closest('div').text());
 
+    // loop through length of data to match array item name with div text
     for (var i = 0; i < data.length; i++) {
 
         if (data[i] === index) {
+
+            // removes item from global array
             data.splice(i, 1);
 
         }
     }
 
+    // removes item from HTML
     el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
-$('#add-btn').on("click", "", function () {
 
-    // push div list items to array
+function addItem() {
+
+    // get the typed input and make it a variable
     var ingredientList = capitalizeFirstLetter($('#myInput').val());
 
-    // push the input value into a temporary array
+    // push the input value into a temporary array to verify duplicates
     tempData.push(ingredientList);
 
     // run validation function/item creation
@@ -174,11 +189,28 @@ $('#add-btn').on("click", "", function () {
     // empty temporary array
     tempData = [];
 
+    // after item is created, empty the input field
     document.getElementById('myInput').value = '';
 
     console.log(data);
     console.log(data.toString());
+}
+
+$('#add-btn').on("click", "", function() {
+
+    addItem();  
 })
+
+$('#myInput').bind("enterKey", function () {
+
+    addItem();
+});
+
+$('#myInput').keyup(function (e) {
+    if (e.keyCode == 13) {
+        $(this).trigger("enterKey");
+    }
+});
 
 // on click function for emptying the entire list
 $('#clear-btn').on("click", function () {
@@ -202,7 +234,7 @@ $('#recipe-btn').on('click', function () {
 })
 
 function findListIngredients() {
-    
+
     var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=5&apiKey=27846b408a8344708ee32a5c91abf0a8";
 
     $.ajax({
@@ -210,21 +242,18 @@ function findListIngredients() {
         method: "GET"
     }).then(function (response) {
 
-
         var caraselCardWrapper = $(".carousel-inner");
         var caraselIndicatorWrapper = $(".carousel-indicators");
 
         var cardsPerPage = 4;
         var isActiveCardSet = false;
 
-
         var caraselItem, indicatorItem;
         var cardIndex = 0;
         var indicatorIndex = 0;
 
-     
-    while (cardIndex < response.length) {
-
+        while (cardIndex < response.length) {
+            
             // class "active" attaches to whatever carousel block is displayed
             if (isActiveCardSet === false) {
                 caraselItem = $("<div>").attr("class", "carousel-item active");
@@ -251,8 +280,6 @@ function findListIngredients() {
                 // Create image
                 var image = $("<img>").attr("class", "card-img-top").attr("src", response[cardIndex].image);
                 cardInnerDiv.append(image);
-
-
 
                 // Create body
                 var recipeTitle = response[cardIndex].title;
@@ -285,16 +312,11 @@ function findListIngredients() {
                 }
                 // increment my index
                 cardIndex++;
-                heartClicker();
-
-
 
             }
         }
-
-
-    heartClicker();
-  })
+        heartClicker();
+    })
 }
 
 function heartClicker() {

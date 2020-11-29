@@ -41,6 +41,7 @@ TODO:
 
 README
 Powerpoint Presentation
+Developer page  
 
 Recipe card function that takes list data -> recipe button search
 Enter button to add ingredients
