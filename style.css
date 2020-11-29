@@ -7,8 +7,7 @@ body {
 }
 /*** Centered Logo ***/
 .served {
-  padding: 5px;
-  margin: 10px;
+  margin-top: 50px;
   font-family: "Bad Script";
   letter-spacing: 18px;
   font-size: 50px;
@@ -131,10 +130,45 @@ div .level {
   font-size: x-large;
 }
 
-
-
 .recipe-card-saved {
   width: 400px;
   margin: 20px;
 }
 
+/* Chevron Styling */
+i.fas.fa-chevron-left,
+i.fas.fa-chevron-right {
+  background-color: #0a3d62;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* Carousel Card Styling */
+h4.card-title {
+  font-size: 0.8em;
+}
+
+button.btn.btn-primary.recipeBtn {
+  background-color: #0a3d62;
+}
+
+div.column.is-one-fifth {
+  margin: 0px 3px 0px 18px;
+  box-shadow: 0px 5px 0px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 2%;
+}
+
+div.column {
+  margin: 0px 20px 0px 3px;
+  box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 1%;
+}
+footer {
+  font-size: 0.6em;
+}
+footer.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
