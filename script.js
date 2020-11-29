@@ -253,9 +253,7 @@ function findListIngredients() {
         var indicatorIndex = 0;
 
         while (cardIndex < response.length) {
-            heartClicker();
-
-
+            
             // class "active" attaches to whatever carousel block is displayed
             if (isActiveCardSet === false) {
                 caraselItem = $("<div>").attr("class", "carousel-item active");
@@ -320,7 +318,6 @@ function findListIngredients() {
         heartClicker();
     })
 }
-
 
 function heartClicker() {
     $('.heart-btn').on("click", function () {
