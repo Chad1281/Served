@@ -84,7 +84,10 @@ div.columns.is-gapless {
 
 section ul {
   width: 50%;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .autocomplete-items {
   position: absolute;
   border: 1px solid #d4d4d4;
@@ -126,4 +129,9 @@ div .level {
 .navbar-served {
   color: cadetblue;
   font-size: x-large;
+}
+
+.recipe-card-saved {
+  width: 400px;
+  margin: 20px;
 }
