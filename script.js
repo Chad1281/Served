@@ -1,4 +1,4 @@
-var ingredients = ["Beans", "Ginger", "Ribs", "Guinness", "Rice", "Cabbage", "Milk", "Water", "Cinnamon", "Cumin", "Carrots", "Barley", "Beef", "Chicken", "Salmon", "Tuna", "Cod", "Anchovies", "Spinach", "Tomatoes", "Broccoli", "Butter", "Turmeric", "Feta", "Lettuce", "Onions", "Celery", "Green Onion", "Radish", "Ketchup", "Mustard", "Bread", "Soy Sauce", "Flour", "Sugar", "Brown Sugar", "Garlic", "Zucchini", "Mint", "Turnip", "Asparagus", "Mushrooms", "Pork", "Chili", "Cayenne", "Poblano", "Bell Pepper", "Shrimp", "Jalapeno", "Steak", "Raspberries", "Blueberries", "Blackberries", "Apricots", "Figs", "Raisins", "Grapes", "Yams", "Venison", "Mayonnaise", "Hoisin Sauce", "Chorizo", "Chocolate Chips", "Lemon", "Lime", "Parmesan", "Cheddar", "Mozzarella", "Chicken Broth", "Peanut Butter", "Sausage", "Rosemary", "Oats", "Peach", "Vinegar", "Noodle", "Pear", "Watermelon", "Egg Plant", "Turkey", "Lentil"];
+var ingredients = ["Beans", "Ginger", "Ribs", "Guinness", "Rice", "Cabbage", "Milk", "Water", "Cinnamon", "Cumin", "Carrots", "Barley", "Beef", "Chicken", "Salmon", "Tuna", "Cod", "Anchovies", "Spinach", "Tomatoes", "Broccoli", "Butter", "Turmeric", "Feta", "Lettuce", "Onions", "Celery", "Green Onion", "Radish", "Ketchup", "Mustard", "Bread", "Soy Sauce", "Flour", "Sugar", "Brown Sugar", "Garlic", "Zucchini", "Mint", "Turnip", "Asparagus", "Mushrooms", "Pork", "Chili", "Cayenne", "Poblano", "Bell Pepper", "Shrimp", "Jalapeno", "Steak", "Raspberries", "Blueberries", "Blackberries", "Apricots", "Figs", "Raisins", "Grapes", "Yams", "Venison", "Mayonnaise", "Hoisin Sauce", "Chorizo", "Chocolate Chips", "Lemon", "Lime", "Parmesan", "Cheddar", "Mozzarella", "Chicken Broth", "Peanut Butter", "Sausage", "Rosemary", "Oats", "Peach", "Vinegar", "Noodle", "Pear", "Watermelon", "Egg Plant", "Turkey", "Lentils"];
 
 var data = [];
 var tempData = [];
@@ -274,8 +274,6 @@ function findListIngredients() {
 
             while (cardIndex < response.length) {
 
-
-                
                 // Create main div that holds your single card
                 var cardOuterDiv = $("<div>").attr("class", "col-md-3 left");
 
@@ -295,7 +293,6 @@ function findListIngredients() {
                 var recipeId = response[cardIndex].id;
                 // console.log(recipeId);
                 
-
                 $('.controls-top').attr("style", "display: block");
                 $('#instructions').attr("style", "display: none");
                 var cardBody = $("<div>").attr("class", "card-body");
