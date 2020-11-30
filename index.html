@@ -97,10 +97,10 @@
     </section>
     <!-- Hero code end -->
     <!-- Main content code start -->
-    <div class="columns">
+    <div class="columns" style="margin-top: 104px;">
         <div class="column is-one-fifth" style="background-color:#60a3bc;padding-top:0;">
             <!-- Kevin working on this one -->
-            <div class="columns is-gapless" style="margin-bottom:3px">
+            <div class="columns is-gapless row" style="margin-bottom:3px">
                 <!-- google fonts import --->
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
@@ -110,10 +110,10 @@
                 <button id="clear-btn" class="button column is-one-third">Clear</button>
                 <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
             </div>
-            <div class="columns is-gapless">
-                <form autocomplete="off" action="/action_page.php">
-                    <div class="autocomplete">
-                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
+            <div class="columns is-gapless" style="flex-wrap: wrap; display: flex;">
+                <form autocomplete="off" action="/action_page.php" style="width:66.6667%;">
+                    <div class="autocomplete" style="width:100%;">
+                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients" style="width: 100%;">
                     </div>
                 </form>
                 <button id="add-btn" class="button column is-one-third">Add</button>
