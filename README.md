@@ -61,28 +61,52 @@ Features:
 
 - Using API's, we have integrated a system that generates recipes based on matched percetages of ingredients a user lists on their end. We also have an API for recipes based on dietary preferances if a user is paleo, keto, diabetic, etc.
 - There is a "save" button at the bottom of each card to allow a user to save a recipe for future use. When a recipe card is generated, the heart is empty. Once a user clicks the heart to "save" their recipe, the heart fills up with red and saves their recipe to local storage in a seperate page called "Your Saved Recipes." The developers felt this would be a great addition to the site as well as increase traffic flow later on in the app development for users to continue use of Served's application.
--
+- In addition, we created seperate pages for a "Report an Issue" page and an "About the Developers" page.
+- On the "About Developers" page, on each respective developer, there is a link to their personal GitHub and LinkedIn accounts following the icon.
+
+Languages used:
+
+- HTML
+- CSS
+- JavaScript (jQuery and AJAX)
 
 Links:
 
 - GitHub Repo
-  https://github.com/ktcwn/weatherApp
 - GitHub Pages
 
 Screenshots:
 
 - Landing Page
+  <img src="img/Screenshots for ReadMe/MainLanding.png">
+- Recipe Generator
+  <img src="img/Screenshots for ReadMe/RecipeGenerator.png">
+- Recipes Generated Based on Ingredients
+  <img src="img/Screenshots for ReadMe/RecipesGenerated.png">
+- Recipes with Hearts Filled for Saved Recipes
+  <img src="img/Screenshots for ReadMe/HeartsFilled.png">
+- Report Issue Landing Page / Form
+  <img src="img/Screenshots for ReadMe/ReportIssueLanding.png">
+- About Developers Landing Page
   <img src="img/Screenshots for ReadMe/DevelopersLanding.png">
+  <img src="img/Screenshots for ReadMe/DeveloperPage.png">
 
 Reference:
 
-W3 Schools
-Bootstrap / Bootswatch Library
-UT Bootcamp Starter Code
-Dev Ed
+- Bulma CSS library
+- Flat UI Colors
+- Bootstrap Library
+- Google Fonts
+- Font Awesome
+- Spoonacluar (for API's)
+- W3 Schools
+- MDN
 
 Contributions/Credits:
 
-Calvin Carter (Instructor)
-Study Groups // Classmates
-Brennan Predemore (TA)
+- Calvin Carter (Instructor)
+- Daniel Vega (TA)
+- Charli Spilecki
+- Chad Cook
+- Kevin Cho
+- Katie Cowan
