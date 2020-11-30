@@ -1,4 +1,4 @@
-var ingredients = ["beans", "ginger", "ribs", "guinness", "rice", "cabbage", "milk", "water", "cinnamon", "cumin", "carrots", "barley", "beef", "chicken", "salmon", "tuna", "cod", "anchovies", "spinach", "tomatoes", "broccoli", "butter", "turmeric", "feta", "lettuce", "onions", "celery", "green onion", "radish", "ketchup", "mustard", "bread", "soy sauce", "flour", "sugar", "brown sugar", "garlic", "zucchini", "mint", "turnip", "asparagus", "mushrooms", "pork", "chili", "cayenne", "poblano", "bell pepper", "shrimp", "jalapeno", "steak", "raspberries", "blueberries", "blackberries", "apricots", "figs", "raisins", "grapes", ""];
+var ingredients = ["Beans", "Ginger", "Ribs", "Guinness", "Rice", "Cabbage", "Milk", "Water", "Cinnamon", "Cumin", "Carrots", "Barley", "Beef", "Chicken", "Salmon", "Tuna", "Cod", "Anchovies", "Spinach", "Tomatoes", "Broccoli", "Butter", "Turmeric", "Feta", "Lettuce", "Onions", "Celery", "Green Onion", "Radish", "Ketchup", "Mustard", "Bread", "Soy Sauce", "Flour", "Sugar", "Brown Sugar", "Garlic", "Zucchini", "Mint", "Turnip", "Asparagus", "Mushrooms", "Pork", "Chili", "Cayenne", "Poblano", "Bell Pepper", "Shrimp", "Jalapeno", "Steak", "Raspberries", "Blueberries", "Blackberries", "Apricots", "Figs", "Raisins", "Grapes", "Yams", "Venison", "Mayonnaise", "Hoisin Sauce", "Chorizo", "Chocolate Chips", "Lemon", "Lime", "Parmesan", "Cheddar", "Mozzarella", "Chicken Broth", "Peanut Butter", "Sausage", "Rosemary", "Oats", "Peach", "Vinegar", "Noodle", "Pear", "Watermelon", "Egg Plant", "Turkey", "Lentils"];
 
 var data = [];
 var tempData = [];
@@ -10,7 +10,7 @@ function autocomplete(inp, arr) {
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function (e) {
+    inp.addEventListener("input", function () {
         var a, b, i, val = this.value;
         /*close any already open lists of autocompleted values*/
         closeAllLists();
@@ -19,7 +19,7 @@ function autocomplete(inp, arr) {
         /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
         a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
+        a.setAttribute("class", "autocomplete-items mystyle");
         /*append the DIV element as a child of the autocomplete container:*/
         this.parentNode.appendChild(a);
         /*for each item in the array...*/
@@ -27,12 +27,12 @@ function autocomplete(inp, arr) {
             /*check if the item starts with the same letters as the text field value:*/
             if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
                 /*create a DIV element for each matching element:*/
-                b = document.createElement("DIV");
+                b = document.createElement("DIV")
                 /*make the matching letters bold:*/
                 b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
                 b.innerHTML += arr[i].substr(val.length);
                 /*insert a input field that will hold the current array item's value:*/
-                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.innerHTML += "<input type='hidden' style='font-family: Georgia;' value='" + arr[i] + "'>";
                 /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function (e) {
                     /*insert the value for the autocomplete text field:*/
@@ -236,10 +236,8 @@ $('#recipe-btn').on('click', function () {
 
 function findListIngredients() {
 
-
-
     
-    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=5&apiKey=87b70540ba274bf5b50d685b85c91600";
+    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=50&apiKey=87b70540ba274bf5b50d685b85c91600";
 
 
     $.ajax({
@@ -294,14 +292,40 @@ function findListIngredients() {
 
                 var recipeId = response[cardIndex].id;
                 // console.log(recipeId);
+                
+                $('.controls-top').attr("style", "display: block");
+                $('#instructions').attr("style", "display: none");
                 var cardBody = $("<div>").attr("class", "card-body");
                 var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
                 var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
                 var button = $("<button>").attr("id", recipeId).addClass("btn btn-primary recipeBtn").text("Go to Recipe");
 
                 var saveBtn = $("<a href:''>").attr("id", "save-button");
-                var saveHeart = $("<img>").attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
-
+                var saveHeart = $("<img>")
+                if (isRecipeSaved(response[cardIndex].id)) {
+                    saveHeart.attr("src", "./img/heart.png").attr("class", "heart-btn");
+                } else {
+                    saveHeart.attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
+                }
+                let recipeToSave = response[cardIndex]
+                saveHeart.on("click", function() {
+                    // Toggles the empty/full heart
+                    if ($(this).hasClass("empty")) {
+                        $(this).attr('src', './img/heart.png');
+                        $(this).addClass('full').removeClass('empty');
+                
+                        // Save recipe in local storage
+                        saveRecipe(recipeToSave)
+                    }
+                    else {
+                        $(this).attr('src', './img/emptyHeart.png');
+                        $(this).addClass('empty').removeClass('full');
+                
+                        // Unsave recipe in local storage
+                        unsaveRecipe(recipeToSave.id)
+                    }
+                })
+    
                 saveBtn.append(saveHeart);
 
                 cardBody.append(h4, pTag, button, saveBtn);
@@ -324,30 +348,9 @@ function findListIngredients() {
 
             }
         }
-    heartClicker();
     getRecipe();
   })
 }
-
-function heartClicker() {
-    $('.heart-btn').on("click", function () {
-        if ($(this).hasClass("empty")) {
-            $(this).attr('src', './img/heart.png');
-            $(this).addClass('full').removeClass('empty');
-        }
-        else {
-            $(this).attr('src', './img/emptyHeart.png');
-            $(this).addClass('empty').removeClass('full');
-
-        }
-    });
-
-
-}
-
-
-
-
 
 function getRecipe() {
 
