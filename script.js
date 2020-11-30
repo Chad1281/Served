@@ -4,6 +4,17 @@ var data = [];
 var tempData = [];
 // putting the array outside the click event to preserve the changes made in it
 
+$(document).ready(function() {
+
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function() {
+  
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active addFlex");
+        $(".navbar-menu").toggleClass("is-active addFlex");
+  
+    });
+  });
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
