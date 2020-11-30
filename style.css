@@ -23,6 +23,11 @@ body {
   background-color: #ffffff;
 }
 
+.landStyling {
+  font-family: "Georgia";
+  letter-spacing: .8px;
+  font-size: 18px;
+}
 /*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
 a.button.is-primary {
   background-color: #f5cd79;
@@ -79,6 +84,22 @@ div.columns.is-gapless {
 
 #recipe-btn {
   width: 66.66667%;
+  font-family: Georgia;
+}
+#clear-btn {
+  font-family: Georgia;
+}
+#add-btn {
+  font-family: Georgia;
+}
+#myInput {
+  font-family: Georgia;
+}
+.mystyle {
+  font-family: Georgia;
+}
+#delete-me {
+  font-family: Georgia;
 }
 
 section ul {

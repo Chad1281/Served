@@ -25,6 +25,10 @@ body {
   background-color: #ffffff;
 }
 
+.landStyling {
+  font-family: "Bad Script";
+}
+
 /*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
 a.button.is-primary {
   background-color: #f5cd79;
