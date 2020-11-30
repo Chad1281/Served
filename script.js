@@ -1,9 +1,20 @@
-var ingredients = ["Beans", "Ginger", "Ribs", "Guinness", "Rice", "Cabbage", "Milk", "Water", "Cinnamon", "Cumin", "Carrots", "Barley", "Beef", "Chicken", "Salmon", "Tuna", "Cod", "Anchovies", "Spinach", "Tomatoes", "Broccoli", "Butter", "Turmeric", "Feta", "Lettuce", "Onions", "Celery", "Green Onion", "Radish", "Ketchup", "Mustard", "Bread", "Soy Sauce", "Flour", "Sugar", "Brown Sugar", "Garlic", "Zucchini", "Mint", "Turnip", "Asparagus", "Mushrooms", "Pork", "Chili", "Cayenne", "Poblano", "Bell Pepper", "Shrimp", "Jalapeno", "Steak", "Raspberries", "Blueberries", "Blackberries", "Apricots", "Figs", "Raisins", "Grapes", "Yams", "Venison", "Mayonnaise", "Hoisin Sauce", "Chorizo", "Chocolate Chips", "Lemon", "Lime", "Parmesan", "Cheddar", "Mozzarella", "Chicken Broth", "Peanut Butter", "Sausage", "Rosemary", "Oats", "Peach", "Vinegar", "Noodle", "Pear", "Watermelon", "Egg Plant", "Turkey", "Lentils"];
+var ingredients = ["Beans", "Ginger", "Ribs", "Guinness", "Rice", "Cabbage", "Milk", "Cinnamon", "Cumin", "Carrots", "Barley", "Beef", "Chicken", "Salmon", "Tuna", "Cod", "Anchovies", "Spinach", "Tomatoes", "Broccoli", "Butter", "Turmeric", "Feta", "Lettuce", "Onions", "Celery", "Green Onion", "Radish", "Ketchup", "Mustard", "Bread", "Soy Sauce", "Flour", "Sugar", "Brown Sugar", "Garlic", "Zucchini", "Mint", "Turnip", "Asparagus", "Mushrooms", "Pork", "Chili", "Cayenne", "Poblano", "Bell Pepper", "Shrimp", "Jalapeno", "Steak", "Raspberries", "Blueberries", "Blackberries", "Apricots", "Figs", "Raisins", "Grapes", "Yams", "Venison", "Mayonnaise", "Hoisin Sauce", "Chorizo", "Chocolate Chips", "Lemon", "Lime", "Parmesan", "Cheddar", "Mozzarella", "Chicken Broth", "Peanut Butter", "Sausage", "Rosemary", "Oats", "Peach", "Vinegar", "Noodle", "Pear", "Watermelon", "Eggplant", "Turkey", "Lentils"];
 
 var data = [];
 var tempData = [];
 // putting the array outside the click event to preserve the changes made in it
 
+$(document).ready(function() {
+
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function() {
+  
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        $(".navbar-burger").toggleClass("is-active flexbox row");
+        $(".navbar-menu").toggleClass("is-active flexbox row");
+  
+    });
+  });
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -237,7 +248,7 @@ $('#recipe-btn').on('click', function () {
 function findListIngredients() {
 
     
-    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&number=50&apiKey=87b70540ba274bf5b50d685b85c91600";
+    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&ignorePantry=true&ranking=2&number=50&apiKey=27846b408a8344708ee32a5c91abf0a8";
 
 
     $.ajax({

@@ -28,7 +28,7 @@
             <img src=" img/food-serving.png" width="35" height="100">
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
+                    data-target=".navbar-menu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -97,10 +97,9 @@
     </section>
     <!-- Hero code end -->
     <!-- Main content code start -->
-    <div class="columns">
+    <div class="columns" style="margin-top: 104px;">
         <div class="column is-one-fifth" style="background-color:#60a3bc;padding-top:0;">
-            <!-- Kevin working on this one -->
-            <div class="columns is-gapless" style="margin-bottom:3px">
+            <div class="columns is-gapless row" style="margin-bottom:3px;   padding-top: 10px;">
                 <!-- google fonts import --->
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
@@ -110,10 +109,11 @@
                 <button id="clear-btn" class="button column is-one-third">Clear</button>
                 <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
             </div>
-            <div class="columns is-gapless">
-                <form autocomplete="off" action="/action_page.php">
-                    <div class="autocomplete">
-                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients">
+            <div class="columns is-gapless" style="flex-wrap: wrap; display: flex;
+            margin-top: 10px;">
+                <form autocomplete="off" action="/action_page.php" style="width:66.6667%;">
+                    <div class="autocomplete" style="width:100%;">
+                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients" style="width: 100%;">
                     </div>
                 </form>
                 <button id="add-btn" class="button column is-one-third">Add</button>
@@ -131,8 +131,8 @@
 
                 <p class="landStyling" style="font-size:30px;">Serve up something new for dinner!</p>
 
-                <p class="landStyling" style="font-size: 18px;">Start by adding your ingredients (e.g. mozzarella,
-                    tomatoes, pesto, etc.) and
+                <p class="landStyling" style="font-size: 18px;">Start by adding your ingredients such as mozzarella,
+                    tomatoes, or pesto, and
 
                     <em>Served</em>
                     will return recipes to match.
