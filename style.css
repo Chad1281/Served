@@ -24,7 +24,7 @@ body {
 }
 
 .landStyling {
-  font-family: "Georgia";
+  font-family: "Roboto";
   letter-spacing: .8px;
   font-size: 18px;
 }
@@ -84,22 +84,22 @@ div.columns.is-gapless {
 
 #recipe-btn {
   width: 66.66667%;
-  font-family: Georgia;
+  font-family: "Roboto";
 }
 #clear-btn {
-  font-family: Georgia;
+  font-family: "Roboto";
 }
 #add-btn {
-  font-family: Georgia;
+  font-family: "Roboto";
 }
 #myInput {
-  font-family: Georgia;
+  font-family: "Roboto";
 }
 .mystyle {
-  font-family: Georgia;
+  font-family: "Roboto";
 }
 #delete-me {
-  font-family: Georgia;
+  font-family: "Roboto";
 }
 
 section ul {
