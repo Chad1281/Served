@@ -1,7 +1,7 @@
-var recipeCardDiv = document.querySelector("#recipe-card-div")
+var recipeCardDiv = document.querySelector("#recipe-card-div");
 
 // Get saved recipes from local storage
-var savedRecipesArray = getSavedRecipes()
+var savedRecipesArray = getSavedRecipes();
 
 savedRecipesArray.forEach(function (recipe) {
 
@@ -26,7 +26,7 @@ savedRecipesArray.forEach(function (recipe) {
     var button = $("<button>").attr("id", recipeId).addClass("btn btn-primary recipeBtn").text("Go to Recipe");
 
     var saveBtn = $("<a href:''>").attr("id", "save-button");
-    var saveHeart = $("<img>")
+    var saveHeart = $("<img>");
     if (isRecipeSaved(recipe.id)) {
         saveHeart.attr("src", "./img/heart.png").attr("class", "heart-btn");
     } else {
@@ -40,14 +40,14 @@ savedRecipesArray.forEach(function (recipe) {
             $(this).addClass('full').removeClass('empty');
     
             // Save recipe in local storage
-            saveRecipe(recipeToSave)
+            saveRecipe(recipeToSave);
         }
         else {
             $(this).attr('src', './img/emptyHeart.png');
             $(this).addClass('empty').removeClass('full');
     
             // Unsave recipe in local storage
-            unsaveRecipe(recipeToSave.id)
+            unsaveRecipe(recipeToSave.id);
         }
     })
 

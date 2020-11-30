@@ -254,6 +254,8 @@ function findListIngredients() {
         var caraselItem, indicatorItem;
         var cardIndex = 0;
         var indicatorIndex = 0;
+        var percentArr = [];
+
 
         while (cardIndex < response.length) {
             
@@ -292,7 +294,62 @@ function findListIngredients() {
 
                 var recipeId = response[cardIndex].id;
                 // console.log(recipeId);
+
+                var percentRaw = parseInt((usedCount / (missedCount + usedCount)) * 100);
+                                
                 
+                                percentArr.push(percentRaw);
+                                // percentArr.sort(function (a, b) {
+                                //     return b - a;
+                                // });
+                
+                                // get all of the response info
+                                    // put each response (title percent etc.) into an array?
+                                    // 
+                
+                                // sort them
+                
+                                
+                                // append them
+                
+                                const amounts = percentArr.map((amt, idx) => [amt, idx]);
+                                console.log(amounts);
+                
+                                amounts.sort((a, b) => b[0] - a[0]);
+                                console.log(percentArr);
+                                console.log(amounts);
+                
+                                for (const [amt, idx] of amounts) {
+                                    // Do something with the sorted amount and original index
+                                    console.log(amt);
+                                    console.log(idx);
+                                    // for (var i = 0; i < cardsPerPage.length; i++) {
+                
+                                        // amt is the percentage
+                                        // idx is the original arranging
+                                            // i need the other elements associated with each idx
+                                        // idx[i]
+                                    
+                                }
+                
+                                console.log(percentArr);
+                                console.log(percentRaw);
+                
+                                // 
+                                // for (var i = 0; i < cardsPerPage.length; i++) {
+                
+                                //     if(    parseInt(response[cardIndex].usedIngredientCount/(response[cardIndex].missedIngredientCount+response[cardIndex].usedIngredientCount)*100)
+                                //     > parseInt(response[i].usedIngredientCount/(response[i].missedIngredientCount+response[i].usedIngredientCount)*100)     )
+                
+                                // }
+                
+                
+                
+                
+                
+                                // appends a card, checks while status, appends next card
+                                // so I will have to move the card itself if it's percent is lower than the one after it
+
                 $('.controls-top').attr("style", "display: block");
                 $('#instructions').attr("style", "display: none");
                 var cardBody = $("<div>").attr("class", "card-body");
