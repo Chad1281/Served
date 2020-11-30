@@ -23,6 +23,11 @@ body {
   background-color: #ffffff;
 }
 
+.landStyling {
+  font-family: "Roboto";
+  letter-spacing: .8px;
+  font-size: 18px;
+}
 /*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
 a.button.is-primary {
   background-color: #f5cd79;
@@ -79,6 +84,22 @@ div.columns.is-gapless {
 
 #recipe-btn {
   width: 66.66667%;
+  font-family: "Roboto";
+}
+#clear-btn {
+  font-family: "Roboto";
+}
+#add-btn {
+  font-family: "Roboto";
+}
+#myInput {
+  font-family: "Roboto";
+}
+.mystyle {
+  font-family: "Roboto";
+}
+#delete-me {
+  font-family: "Roboto";
 }
 
 section ul {

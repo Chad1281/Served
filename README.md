@@ -43,13 +43,10 @@ README
 Powerpoint Presentation
 Developer page  
 
-Recipe card function that takes list data -> recipe button search
-Enter button to add ingredients
+Your saved recipes
 
-Recipe URL
+Nutrition/dietary restrictions
 
-Heart clicker
-Your saved recipes = local storage
-
-3rd column--nutrition/dietary restrictions
 Landing page
+
+Display highest percent items first
