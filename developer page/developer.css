@@ -39,6 +39,7 @@ a.button.is-primary:hover {
 .title {
   display: flex;
   justify-content: center;
+  font-size: ;
 }
 
 /* Developer Card Styling */
