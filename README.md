@@ -25,7 +25,7 @@ $ git pull origin main
     $ git push --delete origin <branch-name>
 Delete locally
     $ git branch -D <branch-name>
- 
+
 
 <!-- 10 minutes
 Elevator Pitch: One minute description, 1 minute
@@ -41,7 +41,7 @@ TODO:
 
 README
 Powerpoint Presentation
-Developer page  
+Developer page
 
 Your saved recipes
 
@@ -50,3 +50,39 @@ Nutrition/dietary restrictions
 Landing page
 
 Display highest percent items first
+
+Description:
+
+- In an effort to inspire creativity in the kitchen and reduce the carbon footprint amongst most homes, we created Served. Served allows users to input current ingredients to generate recipes based on what they already have at home. Each recipe generated from their selected ingredients shows a thumbnail of the recipe, the percentage of which it matches the ingredients the user has listed and a heart button at the bottom of the card to "save" their favorite recipes for later use.
+
+In addition, Served also allows a user to simply scroll through recipes based on dietary preferances. For example, a user is on the paleo diet. The user selects their preferred diet and recipes are generated based on their preferred selection.
+
+Features:
+
+- Using API's, we have integrated a system that generates recipes based on matched percetages of ingredients a user lists on their end. We also have an API for recipes based on dietary preferances if a user is paleo, keto, diabetic, etc.
+- There is a "save" button at the bottom of each card to allow a user to save a recipe for future use. When a recipe card is generated, the heart is empty. Once a user clicks the heart to "save" their recipe, the heart fills up with red and saves their recipe to local storage in a seperate page called "Your Saved Recipes." The developers felt this would be a great addition to the site as well as increase traffic flow later on in the app development for users to continue use of Served's application.
+-
+
+Links:
+
+- GitHub Repo
+  https://github.com/ktcwn/weatherApp
+- GitHub Pages
+
+Screenshots:
+
+- Landing Page
+  <img src="img/Screenshots for ReadMe/DevelopersLanding.png">
+
+Reference:
+
+W3 Schools
+Bootstrap / Bootswatch Library
+UT Bootcamp Starter Code
+Dev Ed
+
+Contributions/Credits:
+
+Calvin Carter (Instructor)
+Study Groups // Classmates
+Brennan Predemore (TA)
