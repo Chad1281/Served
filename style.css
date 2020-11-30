@@ -24,9 +24,9 @@ body {
 }
 
 .landStyling {
-  font-family: "Roboto";
-  letter-spacing: .8px;
-  font-size: 18px;
+  font-family: "Thasadith", sans-serif;
+  letter-spacing: 1px;
+  margin: 20px;
 }
 /*** Your Saved Recipes Anchor Button Color/Hover Effect ***/
 a.button.is-primary {
@@ -49,13 +49,39 @@ a.button.is-primary:hover {
   justify-content: center;
   background-size: cover;
 }
-.hero-title {
+h1.hero-title {
+  margin: 240px 0px 0px;
+  font-size: 200px;
+  letter-spacing: 2px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
-  color: #ced6e0;
+  align-items: center;
+  color: #0a3d62;
+  text-align: center;
   font-size: 50px;
   font-family: "Bebas Neue";
+}
+button#recipe-btn.button {
+  font-family: "Thasadith", sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 1000;
+}
+button#add-btn.button.column.is-one-third,
+button#clear-btn.button.column.is-one-third {
+  font-family: "Thasadith", sans-serif;
+  text-align: center;
+  background-color: #dcdde1;
+}
+input#myInput {
+  font-family: "Thasadith", sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+div.hero-body {
+  margin-right: 0;
+  padding: 0;
 }
 .autocomplete {
   /*the container must be positioned relative:*/
