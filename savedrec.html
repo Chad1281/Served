@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <title>Served Project</title>
+    <title>Served | Your Saved Recipes</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -23,36 +23,51 @@
     <!-- Navbar code start -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a href="index.html" class="navbar-item">
-                <h1 class="navbar-served has-text-weight-bold">Served</h1>
-            </a>
+            <a class="navbar-item" href="..."">
+                <img src=" img/food-serving.png" width="35" height="100">
 
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a href="index.html" class="navbar-item">
-                    Home
+                <a class="navbar-item" id="#home" href="./index.html">
+                    HOME
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
+                    <a class="navbar-link" id="more">
+                        MORE
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                            About the Developers
+                        <a class="navbar-item" href="./developer page/developers.html">
+                            about the developers
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
+                        <a class="navbar-item" href="./report an issue/report.html">
+                            report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="served">
+                <!----------- Imported Google Font for SERVED Logo --------->
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+                </style>
+                SERVED
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" style="color:white;">
+                            Your Saved Recipes
                         </a>
                     </div>
                 </div>
@@ -62,7 +77,8 @@
     <!-- Navbar code end -->
     <!-- Main content code start -->
     <div class="saved-recipes">
-        <div class="is-flex-direction-row is-flex-wrap-wrap is-inline-flex is-justify-content-center" id="recipe-card-div">
+        <div class="is-flex-direction-row is-flex-wrap-wrap is-inline-flex is-justify-content-center"
+            id="recipe-card-div">
             <!-- JS will add cards here -->
         </div>
     </div>
