@@ -21,12 +21,12 @@
 </head>
 
 <body>
-  <!-- Navbar code start -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="..."">
+    <!-- Navbar code start -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="..."">
             <img src=" img/food-serving.png" width="35" height="100">
-                                                                    
+
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                     data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
@@ -77,16 +77,20 @@
     </nav>
     <!-- Navbar code end -->
     <!-- Hero code start -->
-    <section class="hero">
+    <section class="hero with-glow">
         <!-- <img src="img/heroimg.jpg"> -->
         <div class="hero-body">
             <div class="container">
-                <h1 class="hero-title">
+                <h1 class="hero-title" style="float:right;">
                     <!--- added google fonts API for hero text overlay--->
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
                     </style>
-                    serving confidence in the kitchen
+                    serving confidence
+                    <br>
+                    in the
+                    <br>
+                    kitchen
                 </h1>
                 <h2 class="subtitle">
                 </h2>
@@ -97,6 +101,10 @@
         <div class="column is-one-fifth" style="background-color:#60a3bc;padding-top:0;">
             <!-- Kevin working on this one -->
             <div class="columns is-gapless" style="margin-bottom:3px">
+                <!-- google fonts import --->
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
+                </style>
                 <button id="recipe-btn" class="button">Search Recipes</button>
                 <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
                 <button id="clear-btn" class="button column is-one-third">Clear</button>
@@ -118,14 +126,25 @@
         <div class="column" style="background-color: whitesmoke;">
 
 
-            <div id="instructions" class="row" style="justify-content: center; text-align: center; padding-right: 5%; padding-left: 5%;">
+            <div id="instructions" class="row"
+                style="justify-content: center; text-align: center; padding-right: 5%; padding-left: 5%;">
 
-                <p class="landStyling">Serve up something new for dinner.</p>
-                
-                <p class="landStyling">Start by adding your ingredients such as mozzarella, tomatoes, or pesto, and Served
-                    will return recipes to match. The App can also detect ingredients that don't appear in the drop-down menu.</p>
+                <p class="landStyling" style="font-size:30px;">Serve up something new for dinner!</p>
 
-                <p class="landStyling">Click the hearts under each one to save your favorites!</p>
+                <p class="landStyling" style="font-size: 18px;">Start by adding your ingredients such as mozzarella,
+                    tomatoes, or pesto, and
+
+                    <em>Served</em>
+                    will return recipes to match.
+                    <br>
+
+                    <em>Served</em> can also detect ingredients that don't appear in the drop-down
+                    menu.</p>
+
+                <p class="landStyling" style="font-size: 15px;">Click the <img src="img/emptyHeart.png"
+                        style="width:25px;" alt="heart outlined in red"> under each recipe option to save your
+                    favorites!
+                </p>
 
             </div>
 
