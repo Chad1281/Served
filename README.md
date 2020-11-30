@@ -35,7 +35,6 @@ Demo: Show it, 2 minutes
 Directions for future Development, 2 minutes
 
 10 minutes
--->
 
 TODO:
 
@@ -49,7 +48,8 @@ Nutrition/dietary restrictions
 
 Landing page
 
-Display highest percent items first
+Display highest percent items first-->
+
 
 Description:
 
