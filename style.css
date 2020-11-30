@@ -16,7 +16,7 @@ body {
 }
 
 .flexbox{
-  display: flex!important;
+  display: inline-flex!important;
 }
 
 /*** Nav Bar ***/
