@@ -367,7 +367,7 @@ function getRecipe() {
 
     $(".recipeBtn").click(function () {
         var recipeID = $(this).attr("id");
-        var queryRecipeURL = "https://api.spoonacular.com/recipes/" + recipeID + "/information?apiKey=87b70540ba274bf5b50d685b85c91600";        
+        var queryRecipeURL = "https://api.spoonacular.com/recipes/" + recipeID + "/information?apiKey=27846b408a8344708ee32a5c91abf0a8";        
 
         $.ajax({
             url: queryRecipeURL,
