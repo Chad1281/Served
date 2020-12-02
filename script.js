@@ -246,17 +246,20 @@ $('#recipe-btn').on('click', function () {
 })
 
 function findListIngredients() {
-
     
-    var queryIngredientsURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + el + "&ignorePantry=true&ranking=2&number=50&apiKey=27846b408a8344708ee32a5c91abf0a8";
-
+    var queryIngredientsURL = "https://api.spoonacular.com/recipes/complexSearch?includeIngredients=" + el + "&sort=min-missing-ingredients&number=50&apiKey=27846b408a8344708ee32a5c91abf0a8";
 
     $.ajax({
         url: queryIngredientsURL,
         method: "GET"
     }).then(function (response) {
+        buildCarousel(response);    
+  })
+}
 
-        var caraselCardWrapper = $(".carousel-inner");
+function buildCarousel(response) {
+
+    var caraselCardWrapper = $(".carousel-inner");
         var caraselIndicatorWrapper = $(".carousel-indicators");
 
         var cardsPerPage = 4;
@@ -266,7 +269,7 @@ function findListIngredients() {
         var cardIndex = 0;
         var indicatorIndex = 0;
 
-        while (cardIndex < response.length) {
+        while (cardIndex < response.results.length) {
             
             // class "active" attaches to whatever carousel block is displayed
             if (isActiveCardSet === false) {
@@ -283,7 +286,7 @@ function findListIngredients() {
             caraselIndicatorWrapper.append(indicatorItem);
             indicatorIndex++; // Add 1 to indicator index
 
-            while (cardIndex < response.length) {
+            while (cardIndex < response.results.length) {
 
                 // Create main div that holds your single card
                 var cardOuterDiv = $("<div>").attr("class", "col-md-3 left");
@@ -292,33 +295,35 @@ function findListIngredients() {
                 var cardInnerDiv = $("<div>").attr("class", "card");
 
                 // Create image
-                var image = $("<img>").attr("class", "card-img-top").attr("src", response[cardIndex].image);
+                var image = $("<img>").attr("class", "card-img-top").attr("src", response.results[cardIndex].image);
                 cardInnerDiv.append(image);
 
                 // Create body
-                var recipeTitle = response[cardIndex].title;
-                var missedCount = response[cardIndex].missedIngredientCount;
-                var usedCount = response[cardIndex].usedIngredientCount;
+                var recipeTitle = response.results[cardIndex].title;
+                var missedCount = response.results[cardIndex].missedIngredientCount;
+                var usedCount = response.results[cardIndex].usedIngredientCount;
                 var percentMatch = parseInt((usedCount / (missedCount + usedCount)) * 100) + "% match";
-
-                var recipeId = response[cardIndex].id;
+                if ($.isNumeric(usedCount)) {
+                    var pTag = $("<p>").attr("class", "card-text").text(percentMatch); 
+                } 
+                var recipeId = response.results[cardIndex].id;
                 // console.log(recipeId);
                 
                 $('.controls-top').attr("style", "display: block");
                 $('#instructions').attr("style", "display: none");
                 var cardBody = $("<div>").attr("class", "card-body");
                 var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
-                var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
+                // var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
                 var button = $("<button>").attr("id", recipeId).addClass("btn btn-primary recipeBtn").text("Go to Recipe");
 
                 var saveBtn = $("<a href:''>").attr("id", "save-button");
                 var saveHeart = $("<img>")
-                if (isRecipeSaved(response[cardIndex].id)) {
+                if (isRecipeSaved(response.results[cardIndex].id)) {
                     saveHeart.attr("src", "./img/heart.png").attr("class", "heart-btn");
                 } else {
                     saveHeart.attr("src", "./img/emptyHeart.png").attr("class", "heart-btn empty");
                 }
-                let recipeToSave = response[cardIndex]
+                let recipeToSave = response.results[cardIndex]
                 saveHeart.on("click", function() {
                     // Toggles the empty/full heart
                     if ($(this).hasClass("empty")) {
@@ -359,8 +364,7 @@ function findListIngredients() {
 
             }
         }
-    getRecipe();
-  })
+        getRecipe();
 }
 
 function getRecipe() {
@@ -381,3 +385,55 @@ function getRecipe() {
     })
 }
 
+$("#nutrition").click(function() {
+    $("#nutrition-tab").addClass("is-active");
+    $("#ingredients-tab").removeClass("is-active");
+    $("#ingredients-container").addClass("hide");
+    $("#nutrition-container").removeClass("hide");
+})
+
+$("#ingredients").click(function() {
+    $("#ingredients-tab").addClass("is-active");
+    $("#nutrition-tab").removeClass("is-active");
+    $("#ingredients-container").removeClass("hide");
+    $("#nutrition-container").addClass("hide");
+})
+
+var diet = [];
+
+function addDiet() {
+    diet = [];
+    
+    $.each($("input[name='diet-check']:checked"), function(){
+        diet.push($(this).attr("id"));        
+    })
+
+    findDietRecipes();
+}
+
+function findDietRecipes() {
+
+    di = diet.toString();
+    
+    var queryDietURL = "https://api.spoonacular.com/recipes/complexSearch?diet=" + diet + "&number=50&apiKey=27846b408a8344708ee32a5c91abf0a8";
+
+    console.log(queryDietURL);
+
+    $.ajax({
+        url: queryDietURL,
+        method: "GET"
+    }).then(function (response) {
+        buildCarousel(response);   
+         console.log(response);
+    })
+    
+}
+
+$('#diet-recipe-btn').on('click', function () {
+
+    // clear any previous carousel content
+    $('.carousel-item').remove();
+    $('.carousel-indicators').empty();
+
+    addDiet();
+})
