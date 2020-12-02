@@ -17,12 +17,14 @@ savedRecipesArray.forEach(function (recipe) {
     var missedCount = recipe.missedIngredientCount;
     var usedCount = recipe.usedIngredientCount;
     var percentMatch = parseInt((usedCount / (missedCount + usedCount)) * 100) + "% match";
-
+    if ($.isNumeric(usedCount)) {
+        var pTag = $("<p>").attr("class", "card-text").text(percentMatch); 
+    }
     var recipeId = recipe.id;
     // console.log(recipeId);
     var cardBody = $("<div>").attr("class", "card-body");
     var h4 = $("<h4>").attr("class", "card-title").text(recipeTitle);
-    var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
+    // var pTag = $("<p>").attr("class", "card-text").text(percentMatch);
     var button = $("<button>").attr("id", recipeId).addClass("btn btn-primary recipeBtn").text("Go to Recipe");
 
     var saveBtn = $("<a href:''>").attr("id", "save-button");
