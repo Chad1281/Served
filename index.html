@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <title>Served | Recipes from Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!--Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!-- Material Design Bootstrap -->
-    <link href="assets/css/mdb.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Served | Recipes from Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!--Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <!-- Material Design Bootstrap -->
+  <link href="assets/css/mdb.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -76,53 +76,164 @@
         </div>
     </nav>
     <!-- Navbar code end -->
+
     <!-- Hero code start -->
     <section class="hero with-glow">
-        <!-- <img src="img/heroimg.jpg"> -->
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="hero-title" style="float:right;">
-                    <!--- added google fonts API for hero text overlay--->
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-                    </style>
-                    serving confidence
-                    <br>
-                    in the
-                    <br>
-                    kitchen
-                </h1>
-                <h2 class="subtitle">
-                </h2>
+      <!-- <img src="img/heroimg.jpg"> -->
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="hero-title" style="float:right;">
+            <!--- added google fonts API for hero text overlay--->
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+            </style>
+              serving confidence
+              <br>
+              in the
+              <br>
+              kitchen
+          </h1>
+          <h2 class="subtitle"></h2>
+        </div>
+      </div>
     </section>
     <!-- Hero code end -->
+
     <!-- Main content code start -->
     <div class="columns" style="margin-top: 104px;">
-        <div class="column is-one-fifth" style="background-color:#60a3bc;padding-top:0;">
-            <div class="columns is-gapless row" style="margin-bottom:3px;   padding-top: 10px;">
-                <!-- google fonts import --->
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
-                </style>
-                <button id="recipe-btn" class="button">Search Recipes</button>
-                <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
-                <button id="clear-btn" class="button column is-one-third">Clear</button>
-                <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
-            </div>
-            <div class="columns is-gapless" style="flex-wrap: wrap; display: flex;
-            margin-top: 10px;">
-                <form autocomplete="off" action="/action_page.php" style="width:66.6667%;">
-                    <div class="autocomplete" style="width:100%;">
-                        <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients" style="width: 100%;">
-                    </div>
-                </form>
-                <button id="add-btn" class="button column is-one-third">Add</button>
-            </div>
-            <section id="ingred-list" class="columns" style="display: flex;
-            flex-wrap: wrap; justify-content:center;">
 
-            </section>
+        <div class="column is-one-fifth" style="background-color:#60a3bc;padding-top:0;">
+
+          <h1 id="searchHeader">Find Recipes By:</h1>
+          
+          <!-- Ingredients & Nutrition Tabs -->
+          <div class="tabs is-boxed is-fullwidth">
+            <ul>
+              <li id="ingredients-tab" class="is-active"><a id="ingredients">Ingredients</a></li>
+              <li id="nutrition-tab"><a id="nutrition">Diet</a></li>
+            </ul>
+          </div>
+
+          <!-- Ingredients Tab, hides on nutrition tab click -->
+          <div id="ingredients-container">
+            <div class="columns is-gapless row" style="margin-bottom:3px;   padding-top: 10px;">
+              <!-- google fonts import --->
+              <style>
+                  @import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
+              </style>            
+              <button id="recipe-btn" class="button">Search Recipes</button>
+              <!-- Todo: add on-click function to take whatever items are in the list below the autocomplete and interact w the API -->
+              <button id="clear-btn" class="button column is-one-third">Clear</button>
+              <!-- Todo: clear everything in the list of ingredients below the autocomplete -->
+            </div>
+            <!-- <div class="columns is-gapless" style="flex-wrap: wrap; display: flex; margin-top: 10px;">
+              <div class="dropdown is-active">
+                <div class="dropdown-trigger">
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Cuisine</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <a href="" class="dropdown-item" value="african">African</a>
+                    <a href="" class="dropdown-item" value="american">American</a>
+                    <a href="" class="dropdown-item" value="british">British</a>
+                    <option value="cajun">Cajun</option>
+                    <option value="caribbean">Caribbean</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="easternEuropean">Eastern European</option>
+                    <option value="european">European</option>
+                    <option value="french">French</option>
+                    <option value="german">German</option>
+                    <option value="greek">Greek</option>
+                    <option value="indian">Indian</option>
+                    <option value="irish">Irish</option>
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="jewish">Jewish</option>
+                    <option value="korean">Korean</option>
+                    <option value="latinAmerican">Latin American</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="middleEastern">Middle Eastern</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="southern">Southern</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="thai">Thai</option>
+                    <option value="vietnamese">Vietnamese</option>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="columns is-gapless" style="flex-wrap: wrap; display: flex; margin-top: 10px;">
+              <form autocomplete="off" action="/action_page.php" style="width:66.6667%;">
+                <div class="autocomplete" style="width:100%;">
+                  <input id="myInput" type="text" name="ingredientSearch" placeholder="Ingredients" style="width: 100%;">
+                </div>
+              </form>
+              <button id="add-btn" class="button column is-one-third">Add</button>
+            </div>
+            <section id="ingred-list" class="columns" style="display: flex; flex-wrap: wrap; justify-content:center;"></section>
+          </div>
+
+          <!-- Nutrition Tab, hidden until clicked -->
+          <div id="nutrition-container" class="hide">
+            <div class="columns is-gapless row" style="margin-bottom:3px;   padding-top: 10px;">              
+              <button id="diet-recipe-btn" class="button">Search Recipes</button>
+              <button id="clear-btn" class="button column is-one-third">Clear</button>
+            </div>
+            <div class="dietary-box">
+              <h1>Diets</h1>
+              <label class="diet-container">Gluten Free
+              <input type="radio" id="gluten-free" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container">Ketogenic
+              <input type="radio" id="ketogenic" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container">Vegetarian
+              <input type="radio" id="vegetarian" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container vegetarian">Lacto-Vegetarian
+              <input type="radio" id="lacto-vegetarian" name="diet-check">
+              <span class="checkmark vegetarian-checkmark"></span>
+              </label>
+              <label class="diet-container vegetarian">Ovo-Vegetarian
+              <input type="radio" id="ovo-vegetarian" name="diet-check">
+              <span class="checkmark vegetarian-checkmark"></span>
+              </label>
+              <label class="diet-container">Vegan
+              <input type="radio" id="vegan" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container">Pescetarian
+              <input type="radio" id="pescetarian" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container">Paleo
+              <input type="radio" id="paleo" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container">Primal
+              <input type="radio" id="primal" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+              <label class="diet-container">Whole30
+              <input type="radio" id="whole30" name="diet-check">
+              <span class="checkmark"></span>
+              </label>
+            </div>          
+          </div>
+
         </div>
+
+        
+
         <div class="column" style="background-color: whitesmoke;">
 
 
