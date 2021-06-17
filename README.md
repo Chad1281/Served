@@ -51,31 +51,30 @@ Landing page
 Display highest percent items first-->
 
 
-Description:
+## Description:
 
 - In an effort to inspire creativity in the kitchen and reduce the carbon footprint amongst most homes, we created Served. Served allows users to input current ingredients to generate recipes based on what they already have at home. Each recipe generated from their selected ingredients shows a thumbnail of the recipe, the percentage of which it matches the ingredients the user has listed and a heart button at the bottom of the card to "save" their favorite recipes for later use.
 
 In addition, Served also allows a user to simply scroll through recipes based on dietary preferances. For example, a user is on the paleo diet. The user selects their preferred diet and recipes are generated based on their preferred selection.
 
-Features:
+## Features:
 
 - Using API's, we have integrated a system that generates recipes based on matched percetages of ingredients a user lists on their end. We also have an API for recipes based on dietary preferances if a user is paleo, keto, diabetic, etc.
 - There is a "save" button at the bottom of each card to allow a user to save a recipe for future use. When a recipe card is generated, the heart is empty. Once a user clicks the heart to "save" their recipe, the heart fills up with red and saves their recipe to local storage in a seperate page called "Your Saved Recipes." The developers felt this would be a great addition to the site as well as increase traffic flow later on in the app development for users to continue use of Served's application.
 - In addition, we created seperate pages for a "Report an Issue" page and an "About the Developers" page.
 - On the "About Developers" page, on each respective developer, there is a link to their personal GitHub and LinkedIn accounts following the icon.
 
-Languages used:
+## Languages used:
 
 - HTML
 - CSS
 - JavaScript (jQuery and AJAX)
 
-Links:
+## Deployment
 
-- GitHub Repo
-- GitHub Pages
+Access the page at [https://chad1281.github.io/Served/](https://chad1281.github.io/Served/)
 
-Screenshots:
+## Screenshots:
 
 - Landing Page
   <img src="img/Screenshots for ReadMe/MainLanding.png">
@@ -91,7 +90,7 @@ Screenshots:
   <img src="img/Screenshots for ReadMe/DevelopersLanding.png">
   <img src="img/Screenshots for ReadMe/DeveloperPage.png">
 
-Reference:
+## Reference:
 
 - Bulma CSS library
 - Flat UI Colors
@@ -102,7 +101,7 @@ Reference:
 - W3 Schools
 - MDN
 
-Contributions/Credits:
+## Contributions/Credits:
 
 - Calvin Carter (Instructor)
 - Daniel Vega (TA)
